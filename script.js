@@ -50,32 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         section.classList.add('fade-in');
     });
-
-    // Secret page click detection
-    let profileClickCount = 0;
-    const profilePic = document.getElementById('profile-pic');
-
-    if (profilePic) {
-        profilePic.addEventListener('click', () => {
-            profileClickCount++;
-
-            // Add a subtle visual feedback
-            profilePic.style.transform = 'scale(1.05)';
-            setTimeout(() => {
-                profilePic.style.transform = 'scale(1)';
-            }, 150);
-
-            if (profileClickCount === 5) {
-                window.location.href = 'secret.html';
-                profileClickCount = 0;
-            }
-
-            // Reset counter after 3 seconds of inactivity
-            setTimeout(() => {
-                profileClickCount = 0;
-            }, 3000);
-        });
-    }
 });
 
 /**
