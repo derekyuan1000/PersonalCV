@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up hamburger menu for mobile nav
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('nav ul');
+
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function(e) {
             e.stopPropagation(); // Prevent the click from bubbling to document
