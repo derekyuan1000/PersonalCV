@@ -55,9 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('nav ul');
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent the click from bubbling to document
             navMenu.classList.toggle('show');
         });
+
         // Close menu when a nav link is clicked (mobile UX)
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
@@ -65,6 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     navMenu.classList.remove('show');
                 }
             });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            // Check if click is outside the navigation menu and hamburger
+            if (!navMenu.contains(e.target) && e.target !== hamburger && !hamburger.contains(e.target)) {
+                navMenu.classList.remove('show');
+            }
         });
     }
 });
