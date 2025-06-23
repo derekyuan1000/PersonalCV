@@ -597,37 +597,110 @@ footer {
     .header-content {
         flex-direction: column;
         text-align: center;
+        padding: 10px;
     }
 
     nav ul {
         flex-direction: column;
+        gap: 0;
+        padding: 0;
+        background: var(--nav-bg);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        display: none;
+        z-index: 1001;
+        box-shadow: var(--shadow);
     }
-
-    .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 8px;
+    nav ul.show {
+        display: flex;
     }
-
+    nav ul li {
+        width: 100%;
+        margin: 0;
+    }
+    nav ul li a, nav ul li button {
+        display: block;
+        width: 100%;
+        padding: 16px 0;
+        border-radius: 0;
+    }
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 10px;
+        z-index: 1002;
+    }
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--text-primary);
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
     .profile, .timeline-item {
         flex-direction: column;
     }
-
-    .timeline-date {
-        margin-bottom: 10px;
+    .profile-image {
+        max-width: 180px;
+        margin: 0 auto 20px auto;
     }
-
+    section {
+        padding: 16px;
+        margin-bottom: 24px;
+    }
     .projects-grid, .certifications-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
-
-    .profile-image {
-        max-width: 250px;
-        margin: 0 auto;
+    .project-card, .certification-card {
+        padding: 0;
     }
-
+    .project-image, .certification-logo {
+        height: 140px;
+    }
+    .project-content, .certification-content {
+        padding: 12px;
+    }
+    .skills-list img {
+        width: 32px !important;
+        height: 32px !important;
+    }
     .stats-grid {
         flex-direction: column;
         align-items: center;
+    }
+    .page-title h2 {
+        font-size: 1.3rem;
+    }
+    h1, h2, h3, h4 {
+        font-size: 1rem;
+    }
+    .detail {
+        min-width: 120px;
+    }
+    .certification-logo img {
+        max-height: 100px;
+    }
+    .courses-list {
+        grid-template-columns: 1fr;
+    }
+    .activity-list li {
+        font-size: 0.95rem;
+    }
+    footer {
+        padding: 12px;
+        font-size: 0.95rem;
     }
 } /* End of media query */
 
