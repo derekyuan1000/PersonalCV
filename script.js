@@ -50,6 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         section.classList.add('fade-in');
     });
+
+    // Set up hamburger menu for mobile nav
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('show');
+        });
+    }
 });
 
 /**

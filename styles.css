@@ -137,6 +137,58 @@ nav ul li a:hover, nav ul li a.active {
     color: #ffffff;
 }
 
+/* Hamburger Styles */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    margin-left: 16px;
+    z-index: 1100;
+}
+
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex;
+        align-items: center;
+    }
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: var(--nav-bg);
+        flex-direction: column;
+        width: 200px;
+        box-shadow: var(--shadow);
+        border-radius: 12px;
+        padding: 16px 0;
+        z-index: 1001;
+        transition: all 0.3s ease;
+    }
+    nav ul.show {
+        display: flex;
+    }
+    .header-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+}
+
 /* Dark Mode Toggle */
 .theme-toggle {
     background: none;
