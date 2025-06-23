@@ -675,13 +675,14 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        /* Reduced height to fit the horizontal navigation */
+        /* Adjusted height to ensure all tabs are visible */
         height: auto;
-        max-height: 80px;
+        max-height: none;
+        overflow-y: visible;
         background: var(--nav-bg);
-        padding: 0.5rem;
+        padding: 1rem;
         transition: all 0.3s ease;
-        gap: 0.5rem;
+        gap: 0.8rem;
         z-index: 1001;
         box-shadow: var(--shadow);
     }
