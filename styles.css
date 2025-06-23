@@ -90,15 +90,17 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow);
+    padding: 0; /* Remove extra padding */
 }
 
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 8px 16px; /* Reduce vertical and horizontal padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 48px; /* Make header more compact */
 }
 
 .logo-area {
@@ -108,9 +110,15 @@ header {
 }
 
 .logo-area h1 {
-    font-size: 1.8rem;
+    font-size: 1.2rem; /* Reduce logo font size */
     font-weight: 700;
     color: var(--text-primary);
+    margin-bottom: 0;
+}
+
+.logo-area p#title {
+    font-size: 0.9rem; /* Smaller subtitle */
+    margin-bottom: 0;
 }
 
 nav {
@@ -121,15 +129,16 @@ nav ul {
     display: flex;
     gap: 8px;
     list-style: none;
-    padding: 16px;
+    padding: 0 8px; /* Less padding for nav */
 }
 
 nav ul li a {
     color: var(--text-primary);
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 6px 10px; /* Smaller nav links */
     border-radius: 8px;
     transition: all 0.3s ease;
+    font-size: 0.95rem;
 }
 
 nav ul li a:hover, nav ul li a.active {
@@ -157,7 +166,7 @@ nav ul li a:hover, nav ul li a.active {
     nav ul {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 48px; /* Lower nav dropdown for smaller header */
         right: 20px;
         background: var(--nav-bg);
         flex-direction: column;
@@ -174,18 +183,24 @@ nav ul li a:hover, nav ul li a.active {
     .header-content {
         flex-direction: row;
         align-items: flex-start;
+        padding: 8px 8px;
+        min-height: 40px;
     }
 }
 
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        text-align: center;
+        padding: 6px 4px;
+        min-height: 36px;
+    }
+    .logo-area h1 {
+        font-size: 1rem;
+    }
+    .logo-area p#title {
+        font-size: 0.8rem;
     }
     nav ul {
-        right: 0;
-        left: 0;
-        margin: 0 auto;
+        top: 40px;
     }
 }
 
