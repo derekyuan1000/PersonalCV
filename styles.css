@@ -668,10 +668,10 @@ footer {
 
     nav ul {
         position: fixed;
-        top: var(--nav-height);
+        /* Moved menu to appear above main content */
+        top: 0;
         left: -100%;
-        width: 100%;
-        /* Updated grid layout to show all items in one row */
+        width: calc(100% - 20px);
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-auto-flow: row;
@@ -681,9 +681,11 @@ footer {
         background: var(--nav-bg);
         padding: 10px;
         transition: all 0.3s ease;
-        gap: 5px;
+        gap: 3px;  /* Reduced gap between items */
         z-index: 1001;
         box-shadow: var(--shadow);
+        border-radius: 8px;
+        margin: 80px 10px 0 10px; /* Added top margin to position below header */
     }
 
     nav ul.show {
@@ -705,10 +707,11 @@ footer {
         display: block;
         width: 100%;
         min-width: 0;
-        padding: 8px 5px;
+        /* Reduced padding and font size */
+        padding: 6px 4px;
         border-radius: 4px;
         text-align: center;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -716,8 +719,9 @@ footer {
 
     nav ul li button.theme-toggle {
         margin: 0 auto;
-        width: 35px;
-        height: 35px;
+        /* Reduced size of theme toggle button */
+        width: 30px;
+        height: 30px;
         padding: 0;
         display: flex;
         justify-content: center;
@@ -727,7 +731,8 @@ footer {
     }
 
     nav ul li button.theme-toggle i {
-        font-size: 1.1rem;
+        /* Reduced icon size */
+        font-size: 0.9rem;
     }
 
     .profile, .timeline-item {
