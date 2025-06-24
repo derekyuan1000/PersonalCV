@@ -641,10 +641,17 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
         padding: 10px;
         height: auto;
+        position: relative;
+    }
+
+    .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
     nav {
@@ -659,11 +666,23 @@ footer {
         right: 10px;
         height: 50px;
         padding: 12px 8px;
+        z-index: 1002;
     }
 
-    .hamburger span {
-        height: 3px;
-        margin: 6px 0;
+    nav ul li button.theme-toggle {
+        position: absolute;
+        top: -45px;
+        right: 70px; /* Moved further left to avoid overlap */
+        width: 35px;
+        height: 35px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--bg-secondary);
+        border-radius: 50%;
+        z-index: 1002;
     }
 
     nav ul {
