@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributions - Derek Yuan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-area">
+                <h1><a href="index.html">Derek Yuan</a></h1>
+                <p id="title">A passionate 15 Year old developer from the UK</p>
+            </div>
+            <nav>
+                <button class="hamburger" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contributions.html" class="active">Contributions</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li>
+                        <button class="theme-toggle" aria-label="Toggle dark mode">
+                            <i class="ri-sun-line" id="theme-icon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="page-title">
+            <h2>My Contributions</h2>
+            <p>Open source contributions to various projects.</p>
+        </section>
+
+        <section class="contributions">
+            <div class="contribution-category">
+                <h3>Open Source Contributions</h3>
+                <div class="contribution-list">
+                    <div class="contribution-item">
+                        <h4><a href="https://github.com/android/architecture-samples/pull/1040" target="_blank">Android Architecture Samples - Test Refactoring</a></h4>
+                        <p class="contribution-date">June 2025</p>
+                        <p class="contribution-description">
+                            Refactored the TasksTest.kt file in Google's official Android Architecture Samples repository to improve
+                            code readability and maintainability. This contribution streamlined the test suite by consolidating test cases,
+                            simplifying helper methods, and removing redundant code, making it easier for Android developers to understand
+                            and extend the test suite in the future.
+                        </p>
+                        <div class="contribution-details">
+                            <h5>PR #1040: refactor TasksTest.kt to be shorter and comments to improve readability</h5>
+                            <p class="contribution-source">Reviewed by: Gemini Code Assist Bot</p>
+                            <div class="issue-description">
+                                <p>The refactoring included several key improvements:</p>
+                                <ul>
+                                    <li>Test Case Consolidation: Combined multiple related test cases into more concise and reusable tests to reduce redundancy and improve clarity</li>
+                                    <li>Helper Method Simplification: Simplified helper methods and introduced new ones for better readability and code reuse</li>
+                                    <li>Boilerplate Reduction: Removed unnecessary setup and assertions to focus on core functionality</li>
+                                    <li>Code Formatting: Consolidated annotations and method declarations for more compact, readable code</li>
+                                </ul>
+                                <p>These changes make the test suite significantly easier to maintain and extend, while still ensuring comprehensive test coverage.</p>
+                            </div>
+                            <div class="contribution-metrics">
+                                <span>Lines changed: +24 −226</span>
+                                <span>Submitted: June 2025</span>
+                                <span>Status: Open (Pending Approval)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contribution-item">
+                        <h4><a href="https://github.com/monkeytypegame/monkeytype/pull/6620" target="_blank">MonkeyType - Chinese Simplified Quotes</a></h4>
+                        <p class="contribution-date">June 2025</p>
+                        <p class="contribution-description">
+                            Contributed 60 famous Chinese Simplified quotes to MonkeyType, a popular typing practice website.
+                            The contribution included original Chinese text along with accurate English translations,
+                            enhancing the cultural diversity of the typing practice material and providing users with
+                            exposure to traditional Chinese wisdom and philosophy.
+                        </p>
+                        <div class="contribution-details">
+                            <h5>PR #6620: impr(quotes): 60 more famous Chinese Simplified Quotes</h5>
+                            <p class="contribution-source">Merged by: Miodec (project maintainer)</p>
+                            <div class="issue-description">
+                                <p>Added a collection of 60 famous Chinese quotes, each with careful English translations.
+                                The quotes range from ancient Chinese proverbs and philosophical sayings to literary excerpts,
+                                covering traditional values, life wisdom, and cultural insights.</p>
+                                <p>Sample quotes include:</p>
+                                <ul>
+                                    <li>"A journey of a thousand miles begins with a single step."</li>
+                                    <li>"Heaven progresses vigorously; a gentleman should persist in self-improvement."</li>
+                                    <li>"Reading a book a hundred times reveals its meaning."</li>
+                                    <li>"Those who know are not as good as those who love."</li>
+                                </ul>
+                            </div>
+                            <div class="contribution-metrics">
+                                <span>Added: +540 lines</span>
+                                <span>Merged: June 16, 2025</span>
+                                <span>Status: Merged</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contribution-item">
+                        <h4><a href="https://github.com/monkeytypegame/monkeytype/issues/6639" target="_blank">MonkeyType - Typing Practice Website</a></h4>
+                        <p class="contribution-date">June 2025</p>
+                        <p class="contribution-description">
+                            Fixed an issue with the block-style cursor being misaligned on initial page load across multiple browsers.
+                            This bug was causing the cursor to be mispositioned when users first opened MonkeyType, requiring a page
+                            refresh to correct the alignment. The fix ensures proper cursor positioning on the first page load,
+                            improving user experience for all MonkeyType users.
+                        </p>
+                        <div class="contribution-details">
+                            <h5>Issue #6639: Block-style cursor misaligned on any browser (on first opening)</h5>
+                            <p class="contribution-source">Issue reported by: gokulp01</p>
+                            <div class="issue-description">
+                                <p>The cursor was misaligned when opening MonkeyType on a new tab in any browser. This issue
+                                was reproducible across Chrome, Brave, and Safari browsers in both normal and incognito modes.
+                                The cursor would appear correctly positioned after a single page refresh.</p>
+                            </div>
+                            <div class="contribution-metrics">
+                                <span>PR #6641</span>
+                                <span>Fixed: June 2025</span>
+                                <span>Status: Merged</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contribution-item">
+                        <h4><a href="https://github.com/youthacks/aha/pull/12" target="_blank">Youthacks AHA - Add SCSS and Update README</a></h4>
+                        <p class="contribution-date">June 2025</p>
+                        <p class="contribution-description">
+                            Introduced a modular SCSS-based styling system, enhanced project documentation, and improved IDE configuration for the Youthacks AHA project. This contribution modernized the codebase with maintainable stylesheets, a clearer README, and better development workflows.
+                        </p>
+                        <div class="contribution-details">
+                            <h5>PR #12: Add SCSS and update Readme</h5>
+                            <p class="contribution-source">Merged by: mattsoh (project maintainer)</p>
+                            <div class="issue-description">
+                                <p>This pull request included several key improvements:</p>
+                                <ul>
+                                    <li>Implemented a new SCSS styling system for modular, responsive design</li>
+                                    <li>Restructured the README.md with a table of contents, installation instructions, and troubleshooting tips</li>
+                                    <li>Added IDE configuration files for streamlined development in IntelliJ-based IDEs</li>
+                                    <li>Organized SCSS into base, components, pages, and responsive categories</li>
+                                    <li>Defined reusable variables and mixins for consistent styling</li>
+                                </ul>
+                                <p>These changes improved maintainability, developer experience, and project documentation.</p>
+                            </div>
+                            <div class="contribution-metrics">
+                                <span>Lines changed: +1,804 −10</span>
+                                <span>Merged: June 2025</span>
+                                <span>Status: Merged</span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year">2025</span> Derek Yuan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
