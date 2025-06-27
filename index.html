@@ -4,123 +4,324 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Derek Yuan - Personal CV</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo-area">
-                <h1><a href="index.html">Derek Yuan</a></h1>
-                <p id="title">A passionate 15 Year old developer from the UK</p>
-            </div>
-            <nav>
-                <button class="hamburger" aria-label="Open navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contributions.html">Contributions</a></li>
-                    <li><a href="certifications.html">Certifications</a></li>
-                    <li>
-                        <button class="theme-toggle" aria-label="Toggle dark mode">
-                            <i class="ri-sun-line" id="theme-icon"></i>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!-- Animated Background -->
+<div class="animated-bg">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+    </div>
+</div>
 
-    <main>
-        <section class="profile">
-            <div class="profile-image">
-                <!-- Replace with your image path -->
-                <img src="images/Profile%20Picture.jpg" alt="Profile Picture" id="profile-pic">
+<header data-aos="fade-down" data-aos-duration="1000">
+    <div class="header-content">
+        <div class="logo-area">
+            <h1 style="white-space: nowrap;"><a href="index.html" style="white-space: nowrap;">Derek Yuan</a></h1>
+            <p id="title" class="typewriter">A passionate 15 Year old developer from the UK</p>
+        </div>
+        <nav>
+            <button class="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contributions.html">Contributions</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="ri-moon-line" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section" data-aos="fade-up" data-aos-duration="1200">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">
+                <span class="gradient-text">Hello, I'm Derek</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+                Crafting digital experiences with passion and precision
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                <a href="#about" class="btn btn-primary pulse-animation">
+                    <i class="ri-user-line"></i>
+                    About Me
+                </a>
+                <a href="projects.html" class="btn btn-secondary">
+                    <i class="ri-code-line"></i>
+                    View Projects
+                </a>
             </div>
-            <div class="profile-content">
-                <h2>About Me</h2>
-                <p>
-                    Welcome to my personal CV website! I'm Derek Yuan, a passionate professional with expertise in software development and project management.
-                    This is the place where you can learn more about my background, skills, and achievements.
-                </p>
+        </div>
+        <div class="hero-visual" data-aos="zoom-in" data-aos-delay="400">
+            <div class="profile-circle">
+                <img src="images/Profile%20Picture.jpg" alt="Derek Yuan" class="hero-image">
+                <div class="orbit-ring ring-1"></div>
+                <div class="orbit-ring ring-2"></div>
+                <div class="orbit-ring ring-3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+        <div class="scroll-arrow">
+            <i class="ri-arrow-down-line"></i>
+        </div>
+        <span>Scroll to explore</span>
+    </div>
+</section>
+
+<main>
+    <!-- About Section -->
+    <section id="about" class="profile section-padding" data-aos="fade-up" data-aos-duration="800">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">About Me</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="profile-container">
+            <div class="profile-image" data-aos="fade-right" data-aos-delay="200">
+                <div class="image-wrapper">
+                    <img src="images/Profile%20Picture.jpg" alt="Profile Picture" id="profile-pic">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+            <div class="profile-content" data-aos="fade-left" data-aos-delay="400">
+                <div class="profile-text">
+                    <p class="intro-text">
+                        Welcome to my digital space! I'm Derek Yuan, a passionate young developer
+                        with a love for creating innovative solutions and exploring cutting-edge technologies.
+                    </p>
+                    <p>
+                        At just 15 years old, I've already immersed myself in the world of software development,
+                        constantly learning and pushing the boundaries of what's possible.
+                    </p>
+                </div>
                 <div class="profile-details">
-                    <div class="detail">
-                        <h3>Contact</h3>
-                        <p>Email: mail@derekyuan.co.uk | derekyuan10000@gmail.com</p>
-                        <p>Phone: 07856433096</p>
-                        <p>Location: Trumpington, Cambridge, UK</p>
+                    <div class="detail" data-aos="fade-up" data-aos-delay="600">
+                        <div class="detail-icon">
+                            <i class="ri-mail-line"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Contact</h3>
+                            <p>mail@derekyuan.co.uk</p>
+                            <p>derekyuan10000@gmail.com</p>
+                            <p>📱 07856433096</p>
+                            <p>📍 Trumpington, Cambridge, UK</p>
+                        </div>
                     </div>
-                    <div class="detail">
-                        <h3>Connect</h3>
-                        <p><a href="https://stackoverflow.com/users/25452143/derek-yuan" target="_blank">LinkedIn</a></p>
-                        <p><a href="https://github.com/derekyuan1000" target="_blank">GitHub</a></p>
+                    <div class="detail" data-aos="fade-up" data-aos-delay="800">
+                        <div class="detail-icon">
+                            <i class="ri-links-line"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Connect</h3>
+                            <p><a href="https://stackoverflow.com/users/25452143/derek-yuan" target="_blank" class="social-link">
+                                <i class="ri-stack-overflow-line"></i> Stack Overflow
+                            </a></p>
+                            <p><a href="https://github.com/derekyuan1000" target="_blank" class="social-link">
+                                <i class="ri-github-line"></i> GitHub
+                            </a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="skills">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <p align="left">
-    <a href="https://developer.android.com" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/>
-    </a>
-    <a href="https://www.blender.org/" target="_blank" rel="noreferrer">
-        <img src="https://download.blender.org/branding/community/blender_community_badge_white.svg" alt="blender" width="40" height="40"/>
-    </a>
-    <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
-    </a>
-    <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer">
-        <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="40" height="40"/>
-    </a>
-    <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
-    </a>
-    <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
-    </a>
-    <a href="https://www.java.com" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/>
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
-    </a>
-    <a href="https://kotlinlang.org" target="_blank" rel="noreferrer">
-        <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="kotlin" width="40" height="40"/>
-    </a>
-    <a href="https://www.linux.org/" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/>
-    </a>
-    <a href="https://nodejs.org" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/>
-    </a>
-    <a href="https://www.python.org" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/>
-    </a>
-    <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/>
-    </a>
-    <a href="https://unity.com/" target="_blank" rel="noreferrer">
-        <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/>
-    </a>
-</p>
-            </ul>
-        </section>
-    </main>
+    <!-- Skills Section -->
+    <section class="skills section-padding" data-aos="fade-up" data-aos-duration="800">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Technologies I work with</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+                <a href="https://developer.android.com" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="Android" />
+                    <span>Android</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+                <a href="https://www.blender.org/" target="_blank" rel="noreferrer">
+                    <img src="https://download.blender.org/branding/community/blender_community_badge_white.svg" alt="Blender" />
+                    <span>Blender</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+                <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" />
+                    <span>CSS3</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer">
+                    <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="Django" />
+                    <span>Django</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+                    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" />
+                    <span>Git</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="600">
+                <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" />
+                    <span>HTML5</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="700">
+                <a href="https://www.java.com" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" />
+                    <span>Java</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="800">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                    <span>JavaScript</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="900">
+                <a href="https://kotlinlang.org" target="_blank" rel="noreferrer">
+                    <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="Kotlin" />
+                    <span>Kotlin</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1000">
+                <a href="https://www.linux.org/" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux" />
+                    <span>Linux</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1100">
+                <a href="https://nodejs.org" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" />
+                    <span>Node.js</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1200">
+                <a href="https://www.python.org" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" />
+                    <span>Python</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1300">
+                <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" />
+                    <span>React</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1400">
+                <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" />
+                    <span>TypeScript</span>
+                </a>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1500">
+                <a href="https://unity.com/" target="_blank" rel="noreferrer">
+                    <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="Unity" />
+                    <span>Unity</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Derek Yuan. All rights reserved.</p>
-    </footer>
+    <!-- Stats Section -->
+    <section class="stats-section section-padding" data-aos="fade-up" data-aos-duration="800">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Journey in Numbers</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-icon">
+                    <i class="ri-code-line"></i>
+                </div>
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Years Old</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-icon">
+                    <i class="ri-folder-line"></i>
+                </div>
+                <div class="stat-number" data-target="20">0</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="stat-icon">
+                    <i class="ri-git-branch-line"></i>
+                </div>
+                <div class="stat-number" data-target="200">0</div>
+                <div class="stat-label">Commits</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="800">
+                <div class="stat-icon">
+                    <i class="ri-trophy-line"></i>
+                </div>
+                <div class="stat-number" data-target="23">0</div>
+                <div class="stat-label">Certifications</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section-padding" data-aos="fade-up" data-aos-duration="800">
+        <div class="cta-content">
+            <h2 data-aos="fade-up">Ready to Collaborate?</h2>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Let's create something amazing together. I'm always open to discussing new opportunities and innovative projects.
+            </p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="projects.html" class="btn btn-primary">
+                    <i class="ri-eye-line"></i>
+                    View My Work
+                </a>
+                <a href="mailto:mail@derekyuan.co.uk" class="btn btn-secondary">
+                    <i class="ri-mail-line"></i>
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer data-aos="fade-up" data-aos-duration="800">
+    <div class="footer-content">
+        <div class="footer-text">
+            <p>&copy; <span id="current-year">2025</span> Derek Yuan. All rights reserved.</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://github.com/derekyuan1000" target="_blank" class="social-icon">
+                <i class="ri-github-line"></i>
+            </a>
+            <a href="https://stackoverflow.com/users/25452143/derek-yuan" target="_blank" class="social-icon">
+                <i class="ri-stack-overflow-line"></i>
+            </a>
+            <a href="mailto:mail@derekyuan.co.uk" class="social-icon">
+                <i class="ri-mail-line"></i>
+            </a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

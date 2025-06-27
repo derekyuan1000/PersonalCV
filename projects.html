@@ -1,283 +1,374 @@
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Projects - Derek Yuan</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Apply saved theme immediately to prevent flash of incorrect theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo-area">
-                <h1><a href="index.html">Derek Yuan</a></h1>
-                <p id="title">A passionate 15 Year old developer from the UK</p>
-            </div>
-            <nav>
-                <button class="hamburger" aria-label="Open navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="contributions.html">Contributions</a></li>
-                    <li><a href="certifications.html">Certifications</a></li>
-                    <li>
-                        <button class="theme-toggle" aria-label="Toggle dark mode">
-                            <i class="ri-sun-line" id="theme-icon"></i>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
+<div class="animated-bg">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+    </div>
+</div>
+
+<header data-aos="fade-down" data-aos-duration="1000">
+    <div class="header-content">
+        <div class="logo-area">
+            <h1 style="white-space: nowrap;"><a href="index.html" style="white-space: nowrap;">Derek Yuan</a></h1>
+            <p id="title" class="typewriter">A passionate 15 Year old developer from the UK</p>
         </div>
-    </header>
+        <nav>
+            <button class="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contributions.html">Contributions</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="ri-moon-line" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <main>
-        <section class="page-title">
-            <h2>My Projects</h2>
-            <p>Here are some of the key projects I've worked on throughout my career.</p>
-        </section>
+<main>
+    <section class="page-title" data-aos="fade-up" data-aos-duration="800">
+        <h2>My Projects</h2>
+        <p>Here are some of the key projects I've worked on throughout my career.</p>
+    </section>
 
-        <section class="projects">
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="mobile">Mobile/Android</button>
-                <button class="filter-btn" data-filter="game">Game Development</button>
-                <button class="filter-btn" data-filter="other">Other Projects</button>
-            </div>
+        <section class="projects" data-aos="fade-up" data-aos-duration="800">
+        <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="python">Python</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="mobile">Mobile/Android</button>
+            <button class="filter-btn" data-filter="game">Game Development</button>
+            <button class="filter-btn" data-filter="other">Other Projects</button>
+        </div>
 
-            <div class="projects-grid">
-                <!-- NeuralNetwork -->
-                <div class="project-card" data-category="python">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/NeuralNetwork" alt="NeuralNetwork">
-                    </div>
-                    <div class="project-content">
-                        <h3>Neural Network from Scratch</h3>
-                        <p class="project-tags">Python, AI, Machine Learning</p>
-                        <p class="project-description">
-                            A custom neural network implementation built entirely from the ground up, using no external modules or dependencies.
-                            Includes a language model, image generation system, and a graphical user interface.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/NeuralNetwork" target="_blank" class="btn">GitHub</a>
-                        </div>
-                    </div>
+        <!-- Search functionality -->
+        <div class="search-container" style="margin: 20px 0; text-align: center;" data-aos="fade-up" data-aos-delay="300">
+            <input type="text" id="project-search" placeholder="Search projects..."
+                   style="padding: 10px 15px; border: 2px solid var(--border-color); border-radius: 25px; width: 300px; max-width: 100%; font-size: 14px; background: var(--card-bg); color: var(--text-primary);">
+        </div>
+
+        <div class="projects-grid" data-aos="fade-up" data-aos-delay="400">
+            <!-- NeuralNetwork -->
+            <div class="project-card" data-category="python" data-name="Neural Network from Scratch" data-tech="Python AI Machine Learning">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/NeuralNetwork" alt="NeuralNetwork">
                 </div>
-
-                <!-- PixelMasterX -->
-                <div class="project-card" data-category="python">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/PixelMasterX" alt="PixelMasterX">
-                    </div>
-                    <div class="project-content">
-                        <h3>PixelMasterX</h3>
-                        <p class="project-tags">Python, Tkinter, Image Processing</p>
-                        <p class="project-description">
-                            A versatile desktop application for file conversion and image manipulation
-                            built with Python and Tkinter.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/PixelMasterX" target="_blank" class="btn">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EasyGit -->
-                <div class="project-card" data-category="python">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/EasyGit" alt="EasyGit">
-                    </div>
-                    <div class="project-content">
-                        <h3>EasyGit</h3>
-                        <p class="project-tags">Python, GUI, Version Control</p>
-                        <p class="project-description">
-                            A simplified version control system built in Python that provides local repository management without the complexity
-                            of merge conflicts. Features a user-friendly tkinter-based GUI.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/EasyGit" target="_blank" class="btn">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SortingAlgorithmVisualiser -->
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/SortingAlgorithmVisualiser" alt="Sorting Algorithm Visualiser">
-                    </div>
-                    <div class="project-content">
-                        <h3>Sorting Algorithm Visualiser</h3>
-                        <p class="project-tags">TypeScript, Algorithms, Visualization</p>
-                        <p class="project-description">
-                            An interactive tool designed to help users understand and visualize various sorting algorithms in action.
-                            Perfect for students learning about algorithmic complexity and sorting techniques.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/SortingAlgorithmVisualiser" target="_blank" class="btn">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- QuickNotzz -->
-                <div class="project-card" data-category="mobile">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/QuickNotzz" alt="QuickNotzz">
-                    </div>
-                    <div class="project-content">
-                        <h3>QuickNotzz</h3>
-                        <p class="project-tags">Kotlin, Android, Note-taking</p>
-                        <p class="project-description">
-                            A user-friendly note-taking application developed in Kotlin.
-                            It allows users to create, edit, and organize notes seamlessly.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/QuickNotzz" target="_blank" class="btn">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DragonBot-LiChessBot -->
-                <div class="project-card" data-category="python">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/DragonBot-LiChessBot" alt="DragonBot-LiChessBot">
-                    </div>
-                    <div class="project-content">
-                        <h3>DragonBot-LiChessBot</h3>
-                        <p class="project-tags">Python, Chess, AI</p>
-                        <p class="project-description">
-                            A Lichess bot with over 10,000 opening book moves and an ELO of around 1960.
-                            Easily runnable from the python file and playable from Lichess with one-click challenge.
-                            Lichess Username: DRAGONTAMER-BOT
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/DragonBot-LiChessBot" target="_blank" class="btn">GitHub</a>
-                            <a href="https://lichess.org/@/DRAGONTAMER-BOT" target="_blank" class="btn">Lichess</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ChessToolkit -->
-                <div class="project-card" data-category="python">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/ChessToolkit" alt="ChessToolkit">
-                    </div>
-                    <div class="project-content">
-                        <h3>ChessToolkit</h3>
-                        <p class="project-tags">Python, Chess Analysis</p>
-                        <p class="project-description">
-                            A Chess Toolkit designed to help you improve at chess, with functions such as analyzing games
-                            using both custom and set engines locally and on the cloud.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/ChessToolkit" target="_blank" class="btn">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ChessWebdigger -->
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/ChessWebdigger" alt="ChessWebdigger">
-                    </div>
-                    <div class="project-content">
-                        <h3>Chess Username Finder</h3>
-                        <p class="project-tags">JavaScript, Node.js, Express, Chess</p>
-                        <p class="project-description">
-                            A web application that helps chess players find their online usernames across popular chess platforms like Chess.com and Lichess.
-                            Features include searching by player's full name, FIDE ID, federation, rating, birth year, with results displayed with confidence scores.
-                            Users can view game counts for found players and analyze opening repertoires with an interactive chess board.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/ChessWebdigger" target="_blank" class="btn">GitHub</a>
-                            <a href="https://chess-webdigger.derekyuan.co.uk" target="_blank" class="btn">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Forked Projects -->
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/monkeytype" alt="MonkeyType">
-                    </div>
-                    <div class="project-content">
-                        <h3>MonkeyType (Fork)</h3>
-                        <p class="project-tags">TypeScript, Web Development</p>
-                        <p class="project-description">
-                            A customizable typing website with a minimalistic design and numerous features.
-                            Test yourself in various modes, track your progress and improve your typing speed.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/monkeytype" target="_blank" class="btn">GitHub Fork</a>
-                            <a href="https://monkeytype.com/" target="_blank" class="btn">Official Site</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="mobile">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/android-architecture-samples" alt="Android Architecture Samples">
-                    </div>
-                    <div class="project-content">
-                        <h3>Android Architecture Samples (Fork)</h3>
-                        <p class="project-tags">Kotlin, Android</p>
-                        <p class="project-description">
-                            A collection of samples to discuss and showcase different architectural tools and patterns for Android apps.
-                            A useful reference for Android development best practices.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/android-architecture-samples" target="_blank" class="btn">GitHub Fork</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="other">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/kotlin" alt="Kotlin">
-                    </div>
-                    <div class="project-content">
-                        <h3>Kotlin Programming Language (Fork)</h3>
-                        <p class="project-tags">Kotlin, Programming Language</p>
-                        <p class="project-description">
-                            The official Kotlin Programming Language repository. This fork allows me to explore the
-                            inner workings of Kotlin and contribute to its development.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/kotlin" target="_blank" class="btn">GitHub Fork</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ChessPairings -->
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <img src="https://opengraph.githubassets.com/1/derekyuan1000/ChessPairings" alt="ChessPairings">
-                    </div>
-                    <div class="project-content">
-                        <h3>ChessPairings</h3>
-                        <p class="project-tags">JavaScript, Node.js, Python, Swiss System, Web App</p>
-                        <p class="project-description">
-                            A web application for managing chess tournaments using the Swiss pairing system. Organizers can load player data from chess tournament websites, generate pairings, record results, and view standings with tiebreak scores (Buchholz, Sonneborn-Berger). Features include player data import, automatic pairings, result recording, and navigation between rounds. Built with Node.js, Express, Python (Beautiful Soup), and vanilla JS.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/derekyuan1000/ChessPairings" target="_blank" class="btn">GitHub</a>
-                            <a href="https://chess-pairings.derekyuan.co.uk" target="_blank" class="btn">Live Demo</a>
-                        </div>
+                <div class="project-content">
+                    <h3>Neural Network from Scratch</h3>
+                    <p class="project-tags">Python, AI, Machine Learning</p>
+                    <p class="project-description">
+                        A custom neural network implementation built entirely from the ground up, using no external modules or dependencies.
+                        Includes a language model, image generation system, and a graphical user interface.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/NeuralNetwork" target="_blank" class="btn">GitHub</a>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>&copy; <span id="current-year">2025</span> Derek Yuan. All rights reserved.</p>
-    </footer>
+            <!-- PixelMasterX -->
+            <div class="project-card" data-category="python" data-name="PixelMasterX" data-tech="Python Tkinter Image Processing">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/PixelMasterX" alt="PixelMasterX">
+                </div>
+                <div class="project-content">
+                    <h3>PixelMasterX</h3>
+                    <p class="project-tags">Python, Tkinter, Image Processing</p>
+                    <p class="project-description">
+                        A versatile desktop application for file conversion and image manipulation
+                        built with Python and Tkinter.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/PixelMasterX" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EasyGit -->
+            <div class="project-card" data-category="python" data-name="EasyGit" data-tech="Python GUI Version Control">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/EasyGit" alt="EasyGit">
+                </div>
+                <div class="project-content">
+                    <h3>EasyGit</h3>
+                    <p class="project-tags">Python, GUI, Version Control</p>
+                    <p class="project-description">
+                        A simplified version control system built in Python that provides local repository management without the complexity
+                        of merge conflicts. Features a user-friendly tkinter-based GUI.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/EasyGit" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SortingAlgorithmVisualiser -->
+            <div class="project-card" data-category="web" data-name="Sorting Algorithm Visualiser" data-tech="TypeScript Algorithms Visualization">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/SortingAlgorithmVisualiser" alt="Sorting Algorithm Visualiser">
+                </div>
+                <div class="project-content">
+                    <h3>Sorting Algorithm Visualiser</h3>
+                    <p class="project-tags">TypeScript, Algorithms, Visualization</p>
+                    <p class="project-description">
+                        An interactive tool designed to help users understand and visualize various sorting algorithms in action.
+                        Perfect for students learning about algorithmic complexity and sorting techniques.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/SortingAlgorithmVisualiser" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QuickNotzz -->
+            <div class="project-card" data-category="mobile" data-name="QuickNotzz" data-tech="Kotlin Android Note-taking">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/QuickNotzz" alt="QuickNotzz">
+                </div>
+                <div class="project-content">
+                    <h3>QuickNotzz</h3>
+                    <p class="project-tags">Kotlin, Android, Note-taking</p>
+                    <p class="project-description">
+                        A user-friendly note-taking application developed in Kotlin.
+                        It allows users to create, edit, and organize notes seamlessly.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/QuickNotzz" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DragonBot-LiChessBot -->
+            <div class="project-card" data-category="python" data-name="DragonBot-LiChessBot" data-tech="Python Chess AI">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/DragonBot-LiChessBot" alt="DragonBot-LiChessBot">
+                </div>
+                <div class="project-content">
+                    <h3>DragonBot-LiChessBot</h3>
+                    <p class="project-tags">Python, Chess, AI</p>
+                    <p class="project-description">
+                        A Lichess bot with over 10,000 opening book moves and an ELO of around 1960.
+                        Easily runnable from the python file and playable from Lichess with one-click challenge.
+                        Lichess Username: DRAGONTAMER-BOT
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/DragonBot-LiChessBot" target="_blank" class="btn">GitHub</a>
+                        <a href="https://lichess.org/@/DRAGONTAMER-BOT" target="_blank" class="btn">Lichess</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ChessToolkit -->
+            <div class="project-card" data-category="python" data-name="ChessToolkit" data-tech="Python Chess Analysis">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/ChessToolkit" alt="ChessToolkit">
+                </div>
+                <div class="project-content">
+                    <h3>ChessToolkit</h3>
+                    <p class="project-tags">Python, Chess Analysis</p>
+                    <p class="project-description">
+                        A Chess Toolkit designed to help you improve at chess, with functions such as analyzing games
+                        using both custom and set engines locally and on the cloud.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/ChessToolkit" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ChessWebdigger -->
+            <div class="project-card" data-category="web" data-name="Chess Username Finder" data-tech="JavaScript Node.js Express Chess">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/ChessWebdigger" alt="ChessWebdigger">
+                </div>
+                <div class="project-content">
+                    <h3>Chess Username Finder</h3>
+                    <p class="project-tags">JavaScript, Node.js, Express, Chess</p>
+                    <p class="project-description">
+                        A web application that helps chess players find their online usernames across popular chess platforms like Chess.com and Lichess.
+                        Features include searching by player's full name, FIDE ID, federation, rating, birth year, with results displayed with confidence scores.
+                        Users can view game counts for found players and analyze opening repertoires with an interactive chess board.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/ChessWebdigger" target="_blank" class="btn">GitHub</a>
+                        <a href="https://chess-webdigger.derekyuan.co.uk" target="_blank" class="btn">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forked Projects -->
+            <div class="project-card" data-category="web" data-name="MonkeyType Fork" data-tech="TypeScript Web Development">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/monkeytype" alt="MonkeyType">
+                </div>
+                <div class="project-content">
+                    <h3>MonkeyType (Fork)</h3>
+                    <p class="project-tags">TypeScript, Web Development</p>
+                    <p class="project-description">
+                        A customizable typing website with a minimalistic design and numerous features.
+                        Test yourself in various modes, track your progress and improve your typing speed.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/monkeytype" target="_blank" class="btn">GitHub Fork</a>
+                        <a href="https://monkeytype.com/" target="_blank" class="btn">Official Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="mobile" data-name="Android Architecture Samples Fork" data-tech="Kotlin Android">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/android-architecture-samples" alt="Android Architecture Samples">
+                </div>
+                <div class="project-content">
+                    <h3>Android Architecture Samples (Fork)</h3>
+                    <p class="project-tags">Kotlin, Android</p>
+                    <p class="project-description">
+                        A collection of samples to discuss and showcase different architectural tools and patterns for Android apps.
+                        A useful reference for Android development best practices.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/android-architecture-samples" target="_blank" class="btn">GitHub Fork</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="other" data-name="Kotlin Programming Language Fork" data-tech="Kotlin Programming Language">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/kotlin" alt="Kotlin">
+                </div>
+                <div class="project-content">
+                    <h3>Kotlin Programming Language (Fork)</h3>
+                    <p class="project-tags">Kotlin, Programming Language</p>
+                    <p class="project-description">
+                        The official Kotlin Programming Language repository. This fork allows me to explore the
+                        inner workings of Kotlin and contribute to its development.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/kotlin" target="_blank" class="btn">GitHub Fork</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ChessPairings -->
+            <div class="project-card" data-category="web" data-name="ChessPairings" data-tech="JavaScript Node.js Python Swiss System Web App">
+                <div class="project-image">
+                    <img src="https://opengraph.githubassets.com/1/derekyuan1000/ChessPairings" alt="ChessPairings">
+                </div>
+                <div class="project-content">
+                    <h3>ChessPairings</h3>
+                    <p class="project-tags">JavaScript, Node.js, Python, Swiss System, Web App</p>
+                    <p class="project-description">
+                        A web application for managing chess tournaments using the Swiss pairing system. Organizers can load player data from chess tournament websites, generate pairings, record results, and view standings with tiebreak scores (Buchholz, Sonneborn-Berger). Features include player data import, automatic pairings, result recording, and navigation between rounds. Built with Node.js, Express, Python (Beautiful Soup), and vanilla JS.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/derekyuan1000/ChessPairings" target="_blank" class="btn">GitHub</a>
+                        <a href="https://chess-pairings.derekyuan.co.uk" target="_blank" class="btn">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- No results message -->
+        <div id="no-results" style="display: none; text-align: center; padding: 40px; color: var(--text-secondary);">
+            <p>No projects found matching your search criteria.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; <span id="current-year">2025</span> Derek Yuan. All rights reserved.</p>
+</footer>
+
+<script>
+    // Initialize AOS animation library
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+    // Simple search and filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        const searchInput = document.getElementById('project-search');
+        const noResults = document.getElementById('no-results');
+
+        let currentFilter = 'all';
+
+        // Filter functionality
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                filterProjects();
+            });
+        });
+
+        // Search functionality
+        searchInput.addEventListener('input', () => {
+            filterProjects();
+        });
+
+        function filterProjects() {
+            const searchTerm = searchInput.value.toLowerCase();
+            let visibleCount = 0;
+
+            projectCards.forEach(card => {
+                const category = card.dataset.category;
+                const name = card.dataset.name.toLowerCase();
+                const tech = card.dataset.tech.toLowerCase();
+                const description = card.querySelector('.project-description').textContent.toLowerCase();
+
+                const matchesFilter = currentFilter === 'all' || category === currentFilter;
+                const matchesSearch = !searchTerm ||
+                    name.includes(searchTerm) ||
+                    tech.includes(searchTerm) ||
+                    description.includes(searchTerm);
+
+                if (matchesFilter && matchesSearch) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show/hide no results message
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+    });
+</script>
 </body>
 </html>
