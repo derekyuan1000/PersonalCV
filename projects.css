@@ -514,6 +514,15 @@ nav ul li a.active {
     animation: titleReveal 1.5s ease-out 0.8s both;
 }
 
+/* Dark theme adjustments for project links */
+[data-theme="dark"] .project-links .btn {
+    box-shadow: 0 2px 8px rgba(116, 185, 255, 0.3);
+}
+
+[data-theme="dark"] .project-links .btn:hover {
+    box-shadow: 0 4px 12px rgba(162, 155, 254, 0.4);
+}
+
 @keyframes titleReveal {
     from {
         transform: translateY(30px) rotateX(90deg);
@@ -522,6 +531,37 @@ nav ul li a.active {
     to {
         transform: translateY(0) rotateX(0deg);
         opacity: 1;
+    }
+}
+
+/* Responsive adjustments for project links */
+@media (max-width: 768px) {
+    .project-links {
+        flex-wrap: wrap;
+    }
+
+    .project-card {
+        min-height: 480px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-links {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 20px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .project-content {
+        padding-bottom: 20px;
+    }
+
+    .project-card {
+        min-height: auto;
+        padding-bottom: 0;
     }
 }
 
@@ -661,6 +701,7 @@ nav ul li a.active {
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
+        padding-bottom: 70px; /* Add space for links at bottom */
     align-items: center;
     gap: 8px;
     color: var(--text-secondary);
@@ -985,6 +1026,7 @@ section:hover {
 .project-card:hover {
     transform: translateY(-10px) rotateY(5deg);
     box-shadow: var(--hover-shadow);
+    margin-top: 0;
 }
 
 .project-card:hover::before {
@@ -1117,6 +1159,9 @@ section:hover {
 .search-container input {
     transition: all 0.4s ease;
     position: relative;
+    width: 180px;
+    font-size: 13px;
+    padding: 8px 12px;
 }
 
 [data-theme="dark"] .search-container input {
@@ -1182,6 +1227,12 @@ footer p {
 
 /* Enhanced Responsive Design with Animations */
 @media (max-width: 768px) {
+    .search-container input {
+        width: 150px;
+        font-size: 12px;
+        padding: 7px 10px;
+    }
+
     .hero-content {
         flex-direction: column;
         text-align: center;
@@ -1238,6 +1289,7 @@ html {
     background: var(--gradient-primary);
     border-radius: 5px;
     transition: all 0.3s ease;
+    max-height: 150px; /* Limit height to prevent pushing links */
 }
 
 ::-webkit-scrollbar-thumb:hover {
