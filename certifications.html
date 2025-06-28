@@ -4,411 +4,1316 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Certifications - Derek Yuan</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="certifications.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Apply saved theme immediately to prevent flash of incorrect theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
     <script src="script.js" defer></script>
+    <script src="certifications.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo-area">
-                <h1><a href="index.html">Derek Yuan</a></h1>
-                <p id="title">A passionate 15 Year old developer from the UK</p>
-            </div>
-            <nav>
-                <button class="hamburger" aria-label="Open navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contributions.html">Contributions</a></li>
-                    <li><a href="certifications.html" class="active">Certifications</a></li>
-                    <li>
-                        <button class="theme-toggle" aria-label="Toggle dark mode">
-                            <i class="ri-sun-line" id="theme-icon"></i>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
+<!-- Animated Background -->
+<div class="animated-bg">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+        <div class="shape shape-6"></div>
+    </div>
+    <div class="particle-system">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+</div>
+
+<header data-aos="fade-down" data-aos-duration="1000">
+    <div class="header-content">
+        <div class="logo-area">
+            <h1><a href="index.html">Derek Yuan</a></h1>
+            <p id="title">A passionate 15 Year old developer from the UK</p>
         </div>
-    </header>
+        <nav>
+            <button class="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contributions.html">Contributions</a></li>
+                <li><a href="certifications.html" class="active">Certifications</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="ri-sun-line" id="theme-icon-certifications"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <main>
-        <section class="page-title">
-            <h2>My Certifications</h2>
-            <p>Professional certifications, courses, and educational achievements.</p>
-        </section>
+<main>
+    <!-- Hero Section -->
+    <section class="page-title" data-aos="fade-up" data-aos-duration="800">
+        <div class="title-content">
+            <div class="title-icon" data-aos="zoom-in" data-aos-delay="200">
+                <i class="ri-award-line"></i>
+            </div>
+            <h2 data-aos="fade-up" data-aos-delay="300">My Certifications</h2>
+            <p data-aos="fade-up" data-aos-delay="500">
+                Professional certifications, courses, and educational achievements that showcase my continuous learning journey.
+            </p>
+            <div class="achievement-stats" data-aos="fade-up" data-aos-delay="700">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="23">0</span>
+                    <span class="stat-label">Certificates</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="8">0</span>
+                    <span class="stat-label">Platforms</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Hours</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="certifications">
-            <div class="certification-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="game">Game Development</button>
-                <button class="filter-btn" data-filter="microsoft">Microsoft</button>
-                <button class="filter-btn" data-filter="other">Other</button>
+    <!-- Filter Section -->
+    <section class="certifications" data-aos="fade-up" data-aos-duration="800">
+        <div class="certifications-container">
+            <div class="certification-filters" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="ri-grid-line"></i>
+                    <span>All</span>
+                    <div class="filter-count">23</div>
+                </button>
+                <button class="filter-btn" data-filter="python">
+                    <i class="ri-code-s-slash-line"></i>
+                    <span>Python</span>
+                    <div class="filter-count">9</div>
+                </button>
+                <button class="filter-btn" data-filter="web">
+                    <i class="ri-global-line"></i>
+                    <span>Web Dev</span>
+                    <div class="filter-count">2</div>
+                </button>
+                <button class="filter-btn" data-filter="game">
+                    <i class="ri-gamepad-line"></i>
+                    <span>Game Dev</span>
+                    <div class="filter-count">4</div>
+                </button>
+                <button class="filter-btn" data-filter="microsoft">
+                    <i class="ri-microsoft-line"></i>
+                    <span>Microsoft</span>
+                    <div class="filter-count">5</div>
+                </button>
+                <button class="filter-btn" data-filter="other">
+                    <i class="ri-more-line"></i>
+                    <span>Other</span>
+                    <div class="filter-count">3</div>
+                </button>
             </div>
 
-            <div class="certifications-grid">
+            <!-- Certifications Grid -->
+            <div class="certifications-grid" id="certifications-grid" data-aos="fade-up" data-aos-delay="300">
                 <!-- Python Certificates -->
-                <div class="certification-card" data-category="python">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/100 Days of Code The Complete Python Pro Bootcamp.jpg" alt="Python Bootcamp Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>100 Days of Code: The Complete Python Pro Bootcamp</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Comprehensive Python programming bootcamp covering fundamentals through advanced topics
-                            over 100 days of coding challenges and projects.
-                        </p>
-                        <a href="CERTIFICATION/100 Days of Code The Complete Python Pro Bootcamp.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="python">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/CS50's Introduction to Artificial Intelligence with Python.jpg" alt="CS50 AI Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>CS50's Introduction to Artificial Intelligence with Python</h3>
-                        <p class="certification-issuer">Issued by: Harvard University</p>
-                        <p class="certification-description">
-                            Introduction to AI concepts and implementation using Python, covering search algorithms,
-                            knowledge representation, machine learning, and neural networks.
-                        </p>
-                        <a href="CERTIFICATION/CS50's Introduction to Artificial Intelligence with Python.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="python">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Complete 2022 Data Science & Machine Learning Bootcamp.jpg" alt="Data Science Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Complete 2022 Data Science & Machine Learning Bootcamp</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Comprehensive bootcamp on data science and machine learning concepts,
-                            including statistical analysis, data visualization, and ML algorithms.
-                        </p>
-                        <a href="CERTIFICATION/Complete 2022 Data Science & Machine Learning Bootcamp.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="python">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/DYDX Pairs Trading Bot Build in Python Running in the Cloud.jpg" alt="Trading Bot Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>DYDX Pairs Trading Bot Build in Python Running in the Cloud</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Specialized course on building automated trading systems in Python
-                            with cloud deployment and integration with cryptocurrency exchanges.
-                        </p>
-                        <a href="CERTIFICATION/DYDX Pairs Trading Bot Build in Python Running in the Cloud.jpg" target="_blank" class="btn">View Certificate</a>
+                <div class="certification-card" data-category="python" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="certification-badge">
+                                <div class="badge-icon">
+                                    <i class="ri-python-line"></i>
+                                </div>
+                            </div>
+                            <div class="certification-logo">
+                                <img src="CERTIFICATION/100 Days of Code The Complete Python Pro Bootcamp.jpg" alt="Python Bootcamp Certificate">
+                                <div class="logo-overlay"></div>
+                            </div>
+                            <div class="certification-content">
+                                <h3>100 Days of Code: Python Pro Bootcamp</h3>
+                                <p class="certification-issuer">
+                                    <i class="ri-building-line"></i>
+                                    Udemy
+                                </p>
+                                <div class="certification-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Full Stack</span>
+                                    <span class="tag">100 Days</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <h4>Course Details</h4>
+                                <p>Comprehensive Python programming bootcamp covering fundamentals through advanced topics over 100 days of coding challenges and projects.</p>
+                                <div class="skills-covered">
+                                    <h5>Skills Covered:</h5>
+                                    <ul>
+                                        <li>Python Fundamentals</li>
+                                        <li>Web Development with Flask</li>
+                                        <li>Data Science & Analysis</li>
+                                        <li>GUI Development</li>
+                                        <li>API Development</li>
+                                    </ul>
+                                </div>
+                                <a href="CERTIFICATION/100 Days of Code The Complete Python Pro Bootcamp.jpg" target="_blank" class="view-cert-btn">
+                                    <i class="ri-eye-line"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="certification-card" data-category="python">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Ethical Hacking Learn The Art of Hacking Using Python3.jpg" alt="Ethical Hacking Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Ethical Hacking: Learn The Art of Hacking Using Python3</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Introduction to ethical hacking methodologies and tools using Python,
-                            including network scanning, vulnerability assessment, and exploitation techniques.
-                        </p>
-                        <a href="CERTIFICATION/Ethical Hacking Learn The Art of Hacking Using Python3.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="python">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Intermediate Python Immersive Training Boost your career.jpg" alt="Intermediate Python Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Intermediate Python Immersive Training | Boost Your Career</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Advanced Python programming concepts, design patterns, and best practices
-                            to improve code quality and development efficiency.
-                        </p>
-                        <a href="CERTIFICATION/Intermediate Python Immersive Training Boost your career.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="python">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Python From Zero to Hero - Code Your Way to the Top.jpg" alt="Python Zero to Hero Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Python: From Zero to Hero - Code Your Way to the Top</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Comprehensive Python course starting from basics and progressing to advanced topics,
-                            with practical projects and real-world applications.
-                        </p>
-                        <a href="CERTIFICATION/Python From Zero to Hero - Code Your Way to the Top.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="python">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/The Python Developer Essentials Immersive Bootcamp.jpg" alt="Python Developer Essentials Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>The Python Developer Essentials Immersive Bootcamp</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Intensive Python developer bootcamp focused on essential skills and libraries
-                            needed for professional Python development.
-                        </p>
-                        <a href="CERTIFICATION/The Python Developer Essentials Immersive Bootcamp.jpg" target="_blank" class="btn">View Certificate</a>
+                <div class="certification-card" data-category="python" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="certification-badge harvard">
+                                <div class="badge-icon">
+                                    <i class="ri-brain-line"></i>
+                                </div>
+                            </div>
+                            <div class="certification-logo">
+                                <img src="CERTIFICATION/CS50's Introduction to Artificial Intelligence with Python.jpg" alt="CS50 AI Certificate">
+                                <div class="logo-overlay"></div>
+                            </div>
+                            <div class="certification-content">
+                                <h3>CS50's Introduction to AI with Python</h3>
+                                <p class="certification-issuer">
+                                    <i class="ri-school-line"></i>
+                                    Harvard University
+                                </p>
+                                <div class="certification-tags">
+                                    <span class="tag">AI</span>
+                                    <span class="tag">Machine Learning</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <h4>Course Details</h4>
+                                <p>Introduction to AI concepts and implementation using Python, covering search algorithms, knowledge representation, machine learning, and neural networks.</p>
+                                <div class="skills-covered">
+                                    <h5>Skills Covered:</h5>
+                                    <ul>
+                                        <li>Search Algorithms</li>
+                                        <li>Knowledge Representation</li>
+                                        <li>Machine Learning</li>
+                                        <li>Neural Networks</li>
+                                        <li>Natural Language Processing</li>
+                                    </ul>
+                                </div>
+                                <a href="CERTIFICATION/CS50's Introduction to Artificial Intelligence with Python.jpg" target="_blank" class="view-cert-btn">
+                                    <i class="ri-eye-line"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="certification-card" data-category="python">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Full Stack Web Application Development with Django Framework.jpg" alt="Django Framework Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Full Stack Web Application Development with Django Framework</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Comprehensive course on building full-stack web applications using Django,
-                            including frontend integration, database design, and deployment.
-                        </p>
-                        <a href="CERTIFICATION/Full Stack Web Application Development with Django Framework.jpg" target="_blank" class="btn">View Certificate</a>
+                <div class="certification-card" data-category="python" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="certification-badge data-science">
+                                <div class="badge-icon">
+                                    <i class="ri-bar-chart-line"></i>
+                                </div>
+                            </div>
+                            <div class="certification-logo">
+                                <img src="CERTIFICATION/Complete 2022 Data Science & Machine Learning Bootcamp.jpg" alt="Data Science Certificate">
+                                <div class="logo-overlay"></div>
+                            </div>
+                            <div class="certification-content">
+                                <h3>Data Science & ML Bootcamp</h3>
+                                <p class="certification-issuer">
+                                    <i class="ri-building-line"></i>
+                                    Udemy
+                                </p>
+                                <div class="certification-tags">
+                                    <span class="tag">Data Science</span>
+                                    <span class="tag">ML</span>
+                                    <span class="tag">Analytics</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <h4>Course Details</h4>
+                                <p>Comprehensive bootcamp on data science and machine learning concepts, including statistical analysis, data visualization, and ML algorithms.</p>
+                                <div class="skills-covered">
+                                    <h5>Skills Covered:</h5>
+                                    <ul>
+                                        <li>Statistical Analysis</li>
+                                        <li>Data Visualization</li>
+                                        <li>Machine Learning</li>
+                                        <li>Python Libraries</li>
+                                        <li>Model Evaluation</li>
+                                    </ul>
+                                </div>
+                                <a href="CERTIFICATION/Complete 2022 Data Science & Machine Learning Bootcamp.jpg" target="_blank" class="view-cert-btn">
+                                    <i class="ri-eye-line"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Web Development Certificates -->
-                <div class="certification-card" data-category="web">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/JavaScript & jQuery - Certification Course for Beginners.jpg" alt="JavaScript & jQuery Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>JavaScript & jQuery - Certification Course for Beginners</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Introduction to JavaScript and jQuery for dynamic web development,
-                            covering fundamentals, DOM manipulation, and event handling.
-                        </p>
-                        <a href="CERTIFICATION/JavaScript & jQuery - Certification Course for Beginners.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="web">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/edX Front End Web Developer Professional Certificate Program HTML.jpg" alt="Front End Web Developer Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Front End Web Developer Professional Certificate Program HTML</h3>
-                        <p class="certification-issuer">Issued by: edX</p>
-                        <p class="certification-description">
-                            Professional certification in front-end web development,
-                            covering HTML, CSS, responsive design, and JavaScript.
-                        </p>
-                        <a href="CERTIFICATION/edX Front End Web Developer Professional Certificate Program HTML.jpg" target="_blank" class="btn">View Certificate</a>
+                <div class="certification-card" data-category="web" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="certification-badge web">
+                                <div class="badge-icon">
+                                    <i class="ri-code-line"></i>
+                                </div>
+                            </div>
+                            <div class="certification-logo">
+                                <img src="CERTIFICATION/JavaScript & jQuery - Certification Course for Beginners.jpg" alt="JavaScript Certificate">
+                                <div class="logo-overlay"></div>
+                            </div>
+                            <div class="certification-content">
+                                <h3>JavaScript & jQuery Certification</h3>
+                                <p class="certification-issuer">
+                                    <i class="ri-building-line"></i>
+                                    Udemy
+                                </p>
+                                <div class="certification-tags">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">jQuery</span>
+                                    <span class="tag">DOM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <h4>Course Details</h4>
+                                <p>Introduction to JavaScript and jQuery for dynamic web development, covering fundamentals, DOM manipulation, and event handling.</p>
+                                <div class="skills-covered">
+                                    <h5>Skills Covered:</h5>
+                                    <ul>
+                                        <li>JavaScript Fundamentals</li>
+                                        <li>DOM Manipulation</li>
+                                        <li>Event Handling</li>
+                                        <li>jQuery Library</li>
+                                        <li>AJAX Requests</li>
+                                    </ul>
+                                </div>
+                                <a href="CERTIFICATION/JavaScript & jQuery - Certification Course for Beginners.jpg" target="_blank" class="view-cert-btn">
+                                    <i class="ri-eye-line"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Game Development Certificates -->
-                <div class="certification-card" data-category="game">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Complete CSharp Unity Game Developer 2D.jpg" alt="Unity 2D Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Complete CSharp Unity Game Developer 2D</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Comprehensive course on 2D game development using Unity and CSharp,
-                            covering game mechanics, physics, animation, and publishing.
-                        </p>
-                        <a href="CERTIFICATION/Complete CSharp Unity Game Developer 2D.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="game">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Complete CSharp Unity Game Developer 3D (Updated To Unity 6).jpg" alt="Unity 3D Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Complete CSharp Unity Game Developer 3D (Updated To Unity 6)</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Advanced course on 3D game development with Unity 6,
-                            including 3D modeling, lighting, physics, and optimization techniques.
-                        </p>
-                        <a href="CERTIFICATION/Complete CSharp Unity Game Developer 3D (Updated To Unity 6).jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="game">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Masterclass in CSharp Programing & Unity 3D Game Development FPS.jpg" alt="Unity FPS Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Masterclass in CSharp Programming & Unity 3D Game Development FPS</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Specialized course on first-person shooter game development in Unity,
-                            including advanced CSharp programming, AI, and game systems.
-                        </p>
-                        <a href="CERTIFICATION/Masterclass in CSharp Programing & Unity 3D Game Development FPS.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="game">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/RPG Core Combat Creator Learn Intermediate Unity CSharp Coding.jpg" alt="RPG Core Combat Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>RPG Core Combat Creator: Learn Intermediate Unity CSharp Coding</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Intermediate-level course focused on building RPG combat systems in Unity,
-                            including character controllers, weapons, abilities, and enemy AI.
-                        </p>
-                        <a href="CERTIFICATION/RPG Core Combat Creator Learn Intermediate Unity CSharp Coding.jpg" target="_blank" class="btn">View Certificate</a>
+                <div class="certification-card" data-category="game" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="certification-badge game">
+                                <div class="badge-icon">
+                                    <i class="ri-gamepad-2-line"></i>
+                                </div>
+                            </div>
+                            <div class="certification-logo">
+                                <img src="CERTIFICATION/Complete CSharp Unity Game Developer 2D.jpg" alt="Unity 2D Certificate">
+                                <div class="logo-overlay"></div>
+                            </div>
+                            <div class="certification-content">
+                                <h3>Unity Game Developer 2D</h3>
+                                <p class="certification-issuer">
+                                    <i class="ri-building-line"></i>
+                                    Udemy
+                                </p>
+                                <div class="certification-tags">
+                                    <span class="tag">Unity</span>
+                                    <span class="tag">C#</span>
+                                    <span class="tag">2D Games</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <h4>Course Details</h4>
+                                <p>Comprehensive course on 2D game development using Unity and C#, covering game mechanics, physics, animation, and publishing.</p>
+                                <div class="skills-covered">
+                                    <h5>Skills Covered:</h5>
+                                    <ul>
+                                        <li>Unity 2D Development</li>
+                                        <li>C# Programming</li>
+                                        <li>Game Physics</li>
+                                        <li>Animation Systems</li>
+                                        <li>Game Publishing</li>
+                                    </ul>
+                                </div>
+                                <a href="CERTIFICATION/Complete CSharp Unity Game Developer 2D.jpg" target="_blank" class="view-cert-btn">
+                                    <i class="ri-eye-line"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Microsoft Certificates -->
-                <div class="certification-card" data-category="microsoft">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Microsoft Office Specialist Associate (Microsoft 365 Apps).jpg" alt="Microsoft Office Associate Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Microsoft Office Specialist: Associate (Microsoft 365 Apps)</h3>
-                        <p class="certification-issuer">Issued by: Microsoft</p>
-                        <p class="certification-description">
-                            Official Microsoft certification demonstrating proficiency
-                            in Microsoft 365 applications for professional use.
-                        </p>
-                        <a href="CERTIFICATION/Microsoft Office Specialist Associate (Microsoft 365 Apps).jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="microsoft">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Microsoft Office Specialist Excel Expert (Office 2019).jpg" alt="Excel Expert Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Microsoft Office Specialist: Excel Expert (Office 2019)</h3>
-                        <p class="certification-issuer">Issued by: Microsoft</p>
-                        <p class="certification-description">
-                            Advanced certification in Microsoft Excel, demonstrating expert-level skills
-                            in data analysis, visualization, and complex spreadsheet management.
-                        </p>
-                        <a href="CERTIFICATION/Microsoft Office Specialist Excel Expert (Office 2019).jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="microsoft">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Microsoft Office Specialist PowerPoint Associate (Office 2019).jpg" alt="PowerPoint Associate Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Microsoft Office Specialist: PowerPoint Associate (Office 2019)</h3>
-                        <p class="certification-issuer">Issued by: Microsoft</p>
-                        <p class="certification-description">
-                            Professional certification in Microsoft PowerPoint, demonstrating competency
-                            in creating professional presentations and visual materials.
-                        </p>
-                        <a href="CERTIFICATION/Microsoft Office Specialist PowerPoint Associate (Office 2019).jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="microsoft">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Microsoft Office Specialist Word Expert (Office 2019).jpg" alt="Word Expert Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Microsoft Office Specialist: Word Expert (Office 2019)</h3>
-                        <p class="certification-issuer">Issued by: Microsoft</p>
-                        <p class="certification-description">
-                            Advanced certification in Microsoft Word, demonstrating expert-level skills
-                            in document creation, formatting, and content management.
-                        </p>
-                        <a href="CERTIFICATION/Microsoft Office Specialist Word Expert (Office 2019).jpg" target="_blank" class="btn">View Certificate</a>
+                <div class="certification-card" data-category="microsoft" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="certification-badge microsoft">
+                                <div class="badge-icon">
+                                    <i class="ri-microsoft-line"></i>
+                                </div>
+                            </div>
+                            <div class="certification-logo">
+                                <img src="CERTIFICATION/Microsoft Office Specialist Associate (Microsoft 365 Apps).jpg" alt="Microsoft Office Certificate">
+                                <div class="logo-overlay"></div>
+                            </div>
+                            <div class="certification-content">
+                                <h3>Microsoft Office Specialist: Associate</h3>
+                                <p class="certification-issuer">
+                                    <i class="ri-microsoft-line"></i>
+                                    Microsoft
+                                </p>
+                                <div class="certification-tags">
+                                    <span class="tag">Office 365</span>
+                                    <span class="tag">Professional</span>
+                                    <span class="tag">Certified</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-content">
+                                <h4>Certification Details</h4>
+                                <p>Official Microsoft certification demonstrating proficiency in Microsoft 365 applications for professional use.</p>
+                                <div class="skills-covered">
+                                    <h5>Skills Covered:</h5>
+                                    <ul>
+                                        <li>Word Processing</li>
+                                        <li>Spreadsheet Management</li>
+                                        <li>Presentation Design</li>
+                                        <li>Collaboration Tools</li>
+                                        <li>Cloud Integration</li>
+                                    </ul>
+                                </div>
+                                <a href="CERTIFICATION/Microsoft Office Specialist Associate (Microsoft 365 Apps).jpg" target="_blank" class="view-cert-btn">
+                                    <i class="ri-eye-line"></i>
+                                    View Certificate
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Other Certificates -->
-                <div class="certification-card" data-category="other">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Associate Android Developer certification in Kotlin.jpg" alt="Android Developer Certificate">
+            <!-- Python Certificates (Additional) -->
+            <div class="certification-card" data-category="python" data-aos="zoom-in" data-aos-delay="700">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge">
+                            <div class="badge-icon">
+                                <i class="ri-exchange-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/DYDX Pairs Trading Bot Build in Python Running in the Cloud.jpg" alt="Trading Bot Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>DYDX Pairs Trading Bot</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Trading</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Cloud</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="certification-content">
-                        <h3>Associate Android Developer certification in Kotlin</h3>
-                        <p class="certification-issuer">Issued by: Google</p>
-                        <p class="certification-description">
-                            Official Google certification demonstrating proficiency in Android
-                            app development using Kotlin programming language.
-                        </p>
-                        <a href="CERTIFICATION/Associate Android Developer certification in Kotlin.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="other">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/DevOps Engineering - A Complete Guide.jpg" alt="DevOps Engineering Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>DevOps Engineering - A Complete Guide</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Comprehensive course on DevOps practices, tools, and methodologies,
-                            including CI/CD pipelines, containerization, and infrastructure as code.
-                        </p>
-                        <a href="CERTIFICATION/DevOps Engineering - A Complete Guide.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="other">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Learn C++ Object Oriented Programming the easy way.jpg" alt="C++ OOP Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Learn C++ Object Oriented Programming the Easy Way</h3>
-                        <p class="certification-issuer">Issued by: Udemy</p>
-                        <p class="certification-description">
-                            Course focused on object-oriented programming principles in C++,
-                            covering classes, inheritance, polymorphism, and encapsulation.
-                        </p>
-                        <a href="CERTIFICATION/Learn C++ Object Oriented Programming the easy way.jpg" target="_blank" class="btn">View Certificate</a>
-                    </div>
-                </div>
-
-                <div class="certification-card" data-category="other">
-                    <div class="certification-logo">
-                        <img src="CERTIFICATION/Red Hat Certified System Administrator.jpg" alt="Red Hat Certificate">
-                    </div>
-                    <div class="certification-content">
-                        <h3>Red Hat Certified System Administrator</h3>
-                        <p class="certification-issuer">Issued by: Red Hat</p>
-                        <p class="certification-description">
-                            Industry-recognized certification validating skills in managing
-                            Red Hat Enterprise Linux systems in enterprise environments.
-                        </p>
-                        <a href="CERTIFICATION/Red Hat Certified System Administrator.jpg" target="_blank" class="btn">View Certificate</a>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Specialized course on building automated trading systems in Python with cloud deployment and integration with cryptocurrency exchanges.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Algorithmic Trading</li>
+                                    <li>API Integration</li>
+                                    <li>Cloud Deployment</li>
+                                    <li>Risk Management</li>
+                                    <li>Data Analysis</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/DYDX Pairs Trading Bot Build in Python Running in the Cloud.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>&copy; <span id="current-year">2025</span> Derek Yuan. All rights reserved.</p>
-    </footer>
+            <div class="certification-card" data-category="python" data-aos="zoom-in" data-aos-delay="800">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge">
+                            <div class="badge-icon">
+                                <i class="ri-shield-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Ethical Hacking Learn The Art of Hacking Using Python3.jpg" alt="Ethical Hacking Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Ethical Hacking with Python3</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Security</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Ethical</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Introduction to ethical hacking methodologies and tools using Python, including network scanning, vulnerability assessment, and exploitation techniques.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Network Security</li>
+                                    <li>Penetration Testing</li>
+                                    <li>Vulnerability Assessment</li>
+                                    <li>Security Tools</li>
+                                    <li>Python Security Scripts</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Ethical Hacking Learn The Art of Hacking Using Python3.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="python" data-aos="zoom-in" data-aos-delay="900">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge">
+                            <div class="badge-icon">
+                                <i class="ri-code-s-slash-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Intermediate Python Immersive Training Boost your career.jpg" alt="Intermediate Python Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Intermediate Python Training</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Intermediate</span>
+                                <span class="tag">Career</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Advanced Python programming concepts, design patterns, and best practices to improve code quality and development efficiency.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Advanced Python Concepts</li>
+                                    <li>Design Patterns</li>
+                                    <li>Code Optimization</li>
+                                    <li>Best Practices</li>
+                                    <li>Professional Development</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Intermediate Python Immersive Training Boost your career.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="python" data-aos="zoom-in" data-aos-delay="1000">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge">
+                            <div class="badge-icon">
+                                <i class="ri-rocket-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Python From Zero to Hero - Code Your Way to the Top.jpg" alt="Python Zero to Hero Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Python: Zero to Hero</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Beginner</span>
+                                <span class="tag">Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Comprehensive Python course starting from basics and progressing to advanced topics, with practical projects and real-world applications.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Python Fundamentals</li>
+                                    <li>Object-Oriented Programming</li>
+                                    <li>Data Structures</li>
+                                    <li>File Handling</li>
+                                    <li>Real-world Projects</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Python From Zero to Hero - Code Your Way to the Top.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="python" data-aos="zoom-in" data-aos-delay="1100">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge">
+                            <div class="badge-icon">
+                                <i class="ri-tools-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/The Python Developer Essentials Immersive Bootcamp.jpg" alt="Python Developer Essentials Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Python Developer Essentials</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Developer</span>
+                                <span class="tag">Bootcamp</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Intensive Python developer bootcamp focused on essential skills and libraries needed for professional Python development.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Professional Python Development</li>
+                                    <li>Essential Libraries</li>
+                                    <li>Testing & Debugging</li>
+                                    <li>Version Control</li>
+                                    <li>Development Best Practices</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/The Python Developer Essentials Immersive Bootcamp.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="python" data-aos="zoom-in" data-aos-delay="1200">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge web">
+                            <div class="badge-icon">
+                                <i class="ri-global-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Full Stack Web Application Development with Django Framework.jpg" alt="Django Framework Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Django Full Stack Development</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Django</span>
+                                <span class="tag">Full Stack</span>
+                                <span class="tag">Web</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Comprehensive course on building full-stack web applications using Django, including frontend integration, database design, and deployment.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Django Framework</li>
+                                    <li>Database Design</li>
+                                    <li>Frontend Integration</li>
+                                    <li>REST APIs</li>
+                                    <li>Web Deployment</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Full Stack Web Application Development with Django Framework.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Certificates (Additional) -->
+            <div class="certification-card" data-category="web" data-aos="zoom-in" data-aos-delay="1300">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge web">
+                            <div class="badge-icon">
+                                <i class="ri-html5-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/edX Front End Web Developer Professional Certificate Program HTML.jpg" alt="Front End Developer Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Front End Web Developer Professional</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-graduation-cap-line"></i>
+                                edX
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">Professional</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Certification Details</h4>
+                            <p>Professional certification in front-end web development, covering HTML, CSS, responsive design, and JavaScript.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Semantic HTML</li>
+                                    <li>Advanced CSS</li>
+                                    <li>Responsive Design</li>
+                                    <li>Web Accessibility</li>
+                                    <li>Modern Development</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/edX Front End Web Developer Professional Certificate Program HTML.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Development Certificates (Additional) -->
+            <div class="certification-card" data-category="game" data-aos="zoom-in" data-aos-delay="1400">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge game">
+                            <div class="badge-icon">
+                                <i class="ri-gamepad-fill"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Complete CSharp Unity Game Developer 3D (Updated To Unity 6).jpg" alt="Unity 3D Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Unity Game Developer 3D (Unity 6)</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Unity 6</span>
+                                <span class="tag">3D</span>
+                                <span class="tag">C#</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Advanced course on 3D game development with Unity 6, including 3D modeling, lighting, physics, and optimization techniques.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Unity 3D Development</li>
+                                    <li>3D Modeling Integration</li>
+                                    <li>Advanced Lighting</li>
+                                    <li>Physics Systems</li>
+                                    <li>Performance Optimization</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Complete CSharp Unity Game Developer 3D (Updated To Unity 6).jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="game" data-aos="zoom-in" data-aos-delay="1500">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge game">
+                            <div class="badge-icon">
+                                <i class="ri-sword-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Masterclass in CSharp Programing & Unity 3D Game Development FPS.jpg" alt="Unity FPS Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Unity 3D FPS Masterclass</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">FPS</span>
+                                <span class="tag">Unity</span>
+                                <span class="tag">C#</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Specialized course on first-person shooter game development in Unity, including advanced C# programming, AI, and game systems.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>FPS Game Mechanics</li>
+                                    <li>Advanced C# Programming</li>
+                                    <li>AI Systems</li>
+                                    <li>Weapon Systems</li>
+                                    <li>Game State Management</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Masterclass in CSharp Programing & Unity 3D Game Development FPS.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="game" data-aos="zoom-in" data-aos-delay="1600">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge game">
+                            <div class="badge-icon">
+                                <i class="ri-shield-cross-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/RPG Core Combat Creator Learn Intermediate Unity CSharp Coding.jpg" alt="RPG Core Combat Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>RPG Core Combat Creator</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">RPG</span>
+                                <span class="tag">Combat</span>
+                                <span class="tag">Unity</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Intermediate-level course focused on building RPG combat systems in Unity, including character controllers, weapons, abilities, and enemy AI.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>RPG Combat Systems</li>
+                                    <li>Character Controllers</li>
+                                    <li>Weapon Systems</li>
+                                    <li>Ability Systems</li>
+                                    <li>Enemy AI</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/RPG Core Combat Creator Learn Intermediate Unity CSharp Coding.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Microsoft Certificates (Additional) -->
+            <div class="certification-card" data-category="microsoft" data-aos="zoom-in" data-aos-delay="1700">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge microsoft">
+                            <div class="badge-icon">
+                                <i class="ri-file-excel-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Microsoft Office Specialist Excel Expert (Office 2019).jpg" alt="Excel Expert Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Excel Expert (Office 2019)</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-microsoft-line"></i>
+                                Microsoft
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Excel</span>
+                                <span class="tag">Expert</span>
+                                <span class="tag">Data</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Certification Details</h4>
+                            <p>Advanced certification in Microsoft Excel, demonstrating expert-level skills in data analysis, visualization, and complex spreadsheet management.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Advanced Formulas</li>
+                                    <li>Data Analysis</li>
+                                    <li>Pivot Tables</li>
+                                    <li>Data Visualization</li>
+                                    <li>Automation with VBA</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Microsoft Office Specialist Excel Expert (Office 2019).jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="microsoft" data-aos="zoom-in" data-aos-delay="1800">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge microsoft">
+                            <div class="badge-icon">
+                                <i class="ri-slideshow-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Microsoft Office Specialist PowerPoint Associate (Office 2019).jpg" alt="PowerPoint Associate Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>PowerPoint Associate (Office 2019)</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-microsoft-line"></i>
+                                Microsoft
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">PowerPoint</span>
+                                <span class="tag">Presentations</span>
+                                <span class="tag">Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Certification Details</h4>
+                            <p>Professional certification in Microsoft PowerPoint, demonstrating competency in creating professional presentations and visual materials.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Presentation Design</li>
+                                    <li>Visual Communication</li>
+                                    <li>Animation & Transitions</li>
+                                    <li>Media Integration</li>
+                                    <li>Professional Templates</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Microsoft Office Specialist PowerPoint Associate (Office 2019).jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="microsoft" data-aos="zoom-in" data-aos-delay="1900">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge microsoft">
+                            <div class="badge-icon">
+                                <i class="ri-file-word-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Microsoft Office Specialist Word Expert (Office 2019).jpg" alt="Word Expert Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Word Expert (Office 2019)</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-microsoft-line"></i>
+                                Microsoft
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Word</span>
+                                <span class="tag">Documents</span>
+                                <span class="tag">Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Certification Details</h4>
+                            <p>Expert-level certification in Microsoft Word, demonstrating advanced skills in document creation, formatting, and specialized features.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Advanced Document Formatting</li>
+                                    <li>Document Automation</li>
+                                    <li>Mail Merge</li>
+                                    <li>Long Document Management</li>
+                                    <li>Custom Templates</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Microsoft Office Specialist Word Expert (Office 2019).jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Certificates -->
+            <div class="certification-card" data-category="other" data-aos="zoom-in" data-aos-delay="2000">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge">
+                            <div class="badge-icon">
+                                <i class="ri-smartphone-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Associate Android Developer certification in Kotlin.jpg" alt="Android Developer Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Associate Android Developer</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-google-line"></i>
+                                Google
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Android</span>
+                                <span class="tag">Kotlin</span>
+                                <span class="tag">Mobile</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Certification Details</h4>
+                            <p>Professional certification demonstrating foundational Android development skills using Kotlin programming language.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Kotlin Programming</li>
+                                    <li>Android UI Development</li>
+                                    <li>App Architecture</li>
+                                    <li>Data Management</li>
+                                    <li>Testing & Debugging</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Associate Android Developer certification in Kotlin.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="other" data-aos="zoom-in" data-aos-delay="2100">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge">
+                            <div class="badge-icon">
+                                <i class="ri-server-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Red Hat Certified System Administrator.jpg" alt="Red Hat Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>Red Hat Certified System Administrator</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Red Hat
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">Linux</span>
+                                <span class="tag">System Admin</span>
+                                <span class="tag">RHCSA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Certification Details</h4>
+                            <p>Professional certification validating skills in Red Hat Enterprise Linux system administration and configuration.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>Linux System Administration</li>
+                                    <li>User Management</li>
+                                    <li>Storage Configuration</li>
+                                    <li>Network Services</li>
+                                    <li>Security Policies</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Red Hat Certified System Administrator.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="other" data-aos="zoom-in" data-aos-delay="2200">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge">
+                            <div class="badge-icon">
+                                <i class="ri-cloud-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/DevOps Engineering - A Complete Guide.jpg" alt="DevOps Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>DevOps Engineering</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">DevOps</span>
+                                <span class="tag">CI/CD</span>
+                                <span class="tag">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Comprehensive guide to DevOps engineering practices, including continuous integration, delivery, and infrastructure automation.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>CI/CD Pipelines</li>
+                                    <li>Infrastructure as Code</li>
+                                    <li>Containerization</li>
+                                    <li>Monitoring & Logging</li>
+                                    <li>Cloud Integration</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/DevOps Engineering - A Complete Guide.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card" data-category="other" data-aos="zoom-in" data-aos-delay="2300">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="certification-badge">
+                            <div class="badge-icon">
+                                <i class="ri-code-box-line"></i>
+                            </div>
+                        </div>
+                        <div class="certification-logo">
+                            <img src="CERTIFICATION/Learn C++ Object Oriented Programming the easy way.jpg" alt="C++ Certificate">
+                            <div class="logo-overlay"></div>
+                        </div>
+                        <div class="certification-content">
+                            <h3>C++ Object Oriented Programming</h3>
+                            <p class="certification-issuer">
+                                <i class="ri-building-line"></i>
+                                Udemy
+                            </p>
+                            <div class="certification-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">OOP</span>
+                                <span class="tag">Programming</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-content">
+                            <h4>Course Details</h4>
+                            <p>Accessible introduction to C++ programming with a focus on object-oriented principles and practical applications.</p>
+                            <div class="skills-covered">
+                                <h5>Skills Covered:</h5>
+                                <ul>
+                                    <li>C++ Fundamentals</li>
+                                    <li>Object-Oriented Design</li>
+                                    <li>Memory Management</li>
+                                    <li>STL Library</li>
+                                    <li>Design Patterns</li>
+                                </ul>
+                            </div>
+                            <a href="CERTIFICATION/Learn C++ Object Oriented Programming the easy way.jpg" target="_blank" class="view-cert-btn">
+                                <i class="ri-eye-line"></i>
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- Certification Stats Section -->
+    <section class="cert-stats-section" data-aos="fade-up" data-aos-duration="800">
+        <div class="stats-container">
+            <h3 data-aos="fade-up" data-aos-delay="200">Learning Journey Statistics</h3>
+            <div class="stats-grid stats-section" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="ri-award-fill"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-target="23">0</span>
+                        <span class="stat-label">Total Certificates</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="ri-time-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-target="500">0</span>
+                        <span class="stat-label">Learning Hours</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="ri-building-2-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-target="8">0</span>
+                        <span class="stat-label">Platforms</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="ri-code-s-slash-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer data-aos="fade-up" data-aos-duration="800">
+    <div class="footer-content">
+        <div class="footer-text">
+            <p>&copy; <span id="current-year">2025</span> Derek Yuan. All rights reserved.</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://github.com/derekyuan1000" target="_blank" class="social-icon">
+                <i class="ri-github-line"></i>
+            </a>
+            <a href="https://stackoverflow.com/users/25452143/derek-yuan" target="_blank" class="social-icon">
+                <i class="ri-stack-overflow-line"></i>
+            </a>
+            <a href="mailto:mail@derekyuan.co.uk" class="social-icon">
+                <i class="ri-mail-line"></i>
+            </a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

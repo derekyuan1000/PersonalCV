@@ -1,3 +1,4 @@
+
 /* Import all base styles from index.css */
 @import url('index.css');
 
@@ -96,41 +97,34 @@
     text-align: center;
     position: relative;
     padding: 20px 0;
-    /* Remove the gradient text effect that's causing issues */
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .contribution-category h3::before {
     content: '';
     position: absolute;
     top: 50%;
-    left: 10%;
-    right: 10%;
+    left: 0;
+    right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent 0%, var(--border-color) 30%, var(--border-color) 70%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--border-color) 25%, var(--border-color) 75%, transparent 100%);
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: -1;
 }
 
 .contribution-category h3::after {
-    content: 'Open Source Contributions';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    height: 60px;
     background: var(--bg-primary);
-    padding: 0 30px;
-    font-size: 2rem;
-    font-weight: 700;
-    background: var(--gradient-primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    z-index: 2;
-}
-
-/* Hide the original text */
-.contribution-category h3 {
-    color: transparent;
+    z-index: -1;
 }
 
 /* Contribution List with Stagger Animation */
@@ -496,9 +490,12 @@
         font-size: 0.8rem;
     }
 
-    .contribution-category h3::after {
+    .contribution-category h3 {
         font-size: 1.6rem;
-        padding: 0 20px;
+    }
+
+    .contribution-category h3::after {
+        height: 50px;
     }
 }
 
@@ -508,7 +505,7 @@
     }
 
     .contribution-category h3 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .contribution-item {
@@ -531,8 +528,7 @@
     }
 
     .contribution-category h3::after {
-        font-size: 1.4rem;
-        padding: 0 15px;
+        height: 45px;
     }
 }
 

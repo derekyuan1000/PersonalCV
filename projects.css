@@ -255,11 +255,11 @@ header {
 /* Navigation - Fixed */
 nav ul {
     display: flex;
-    gap: 12px;
     list-style: none;
-    padding: 6px;
+    gap: 1.5rem;  /* Ensure consistent spacing between nav items */
     align-items: center;
 }
+
 
 nav ul li a {
     color: var(--text-primary);
