@@ -256,25 +256,48 @@ nav ul li a.active {
     box-shadow: var(--hover-shadow);
 }
 
-.theme-toggle {
+/* Base style for navigation buttons (theme, language) */
+.nav-button-base {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
     color: var(--text-primary);
-    display: flex;
+    display: inline-flex; /* Changed to inline-flex for better text alignment */
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    font-size: 1.1rem;
+    font-weight: 500; /* Consistent with nav links */
 }
 
-.theme-toggle:hover {
-    background: rgba(0,0,0,0.05);
-    transform: rotate(180deg) scale(1.1);
+.nav-button-base:hover {
+    background: rgba(0,0,0,0.05); /* A more generic hover */
     color: var(--primary-color);
 }
+
+/* Specific styles for the icon-based theme toggle button */
+.theme-toggle-icon-btn {
+    padding: 10px; /* Padding for icon */
+    border-radius: 50%; /* Circular for icon */
+    font-size: 1.1rem; /* Icon size */
+}
+
+.theme-toggle-icon-btn:hover {
+    transform: rotate(180deg) scale(1.1); /* Icon-specific hover transform */
+}
+
+/* Specific styles for the text-based language toggle button */
+.language-toggle-btn {
+    padding: 8px 12px; /* Padding for text */
+    border-radius: var(--border-radius); /* Standard border radius */
+    font-size: 0.9rem; /* Text size, adjust as needed */
+    min-width: 40px; /* Ensure a minimum width for short texts like "EN" */
+    text-align: center;
+}
+
+.language-toggle-btn:hover {
+    transform: scale(1.05); /* Simple scale hover for text button */
+}
+
 
 .hamburger {
     display: none;

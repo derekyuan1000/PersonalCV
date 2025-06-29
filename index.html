@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="translations.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -27,7 +28,7 @@
     <div class="header-content">
         <div class="logo-area">
             <h1 style="white-space: nowrap;"><a href="index.html" style="white-space: nowrap;">Derek Yuan</a></h1>
-            <p id="title" class="typewriter">A passionate 15 Year old developer from the UK</p>
+            <p id="title" class="typewriter" data-translate-key="title_passionate_developer">A passionate 15 Year old developer from the UK</p>
         </div>
         <nav>
             <button class="hamburger" aria-label="Open navigation menu">
@@ -36,12 +37,17 @@
                 <span></span>
             </button>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contributions.html">Contributions</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="index.html" class="active" data-translate-key="nav_home">Home</a></li>
+                <li><a href="projects.html" data-translate-key="nav_projects">Projects</a></li>
+                <li><a href="contributions.html" data-translate-key="nav_contributions">Contributions</a></li>
+                <li><a href="certifications.html" data-translate-key="nav_certifications">Certifications</a></li>
                 <li>
-                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <button id="language-toggle" class="nav-button-base language-toggle-btn" aria-label="Toggle language">
+                        <span data-translate-key="toggle_language_btn">中文</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-button-base theme-toggle-icon-btn" aria-label="Toggle dark mode">
                         <i class="ri-moon-line" id="theme-icon"></i>
                     </button>
                 </li>
@@ -55,19 +61,19 @@
     <div class="hero-content">
         <div class="hero-text">
             <h1 class="hero-title">
-                <span class="gradient-text">Hello, I'm Derek</span>
+                <span class="gradient-text" data-translate-key="hero_greeting">Hello, I'm Derek</span>
             </h1>
-            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300" data-translate-key="hero_subtitle">
                 Crafting digital experiences with passion and precision
             </p>
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
                 <a href="#about" class="btn btn-primary pulse-animation">
                     <i class="ri-user-line"></i>
-                    About Me
+                    <span data-translate-key="hero_btn_about">About Me</span>
                 </a>
                 <a href="projects.html" class="btn btn-secondary">
                     <i class="ri-code-line"></i>
-                    View Projects
+                    <span data-translate-key="hero_btn_view_projects">View Projects</span>
                 </a>
             </div>
         </div>
@@ -84,7 +90,7 @@
         <div class="scroll-arrow">
             <i class="ri-arrow-down-line"></i>
         </div>
-        <span>Scroll to explore</span>
+        <span data-translate-key="hero_scroll_explore">Scroll to explore</span>
     </div>
 </section>
 
@@ -92,7 +98,7 @@
     <!-- About Section -->
     <section id="about" class="profile section-padding" data-aos="fade-up" data-aos-duration="800">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-translate-key="about_title">About Me</h2>
             <div class="section-divider"></div>
         </div>
         <div class="profile-container">
@@ -104,11 +110,11 @@
             </div>
             <div class="profile-content" data-aos="fade-left" data-aos-delay="400">
                 <div class="profile-text">
-                    <p class="intro-text">
+                    <p class="intro-text" data-translate-key="about_intro_1">
                         Welcome to my digital space! I'm Derek Yuan, a passionate young developer
                         with a love for creating innovative solutions and exploring cutting-edge technologies.
                     </p>
-                    <p>
+                    <p data-translate-key="about_intro_2">
                         At just 15 years old, I've already immersed myself in the world of software development,
                         constantly learning and pushing the boundaries of what's possible.
                     </p>
@@ -119,7 +125,7 @@
                             <i class="ri-mail-line"></i>
                         </div>
                         <div class="detail-content">
-                            <h3>Contact</h3>
+                            <h3 data-translate-key="contact_heading">Contact</h3>
                             <p>mail@derekyuan.co.uk</p>
                             <p>derekyuan10000@gmail.com</p>
                             <p>📱 07856433096</p>
@@ -131,12 +137,12 @@
                             <i class="ri-links-line"></i>
                         </div>
                         <div class="detail-content">
-                            <h3>Connect</h3>
+                            <h3 data-translate-key="connect_heading">Connect</h3>
                             <p><a href="https://stackoverflow.com/users/25452143/derek-yuan" target="_blank" class="social-link">
-                                <i class="ri-stack-overflow-line"></i> Stack Overflow
+                                <i class="ri-stack-overflow-line"></i> <span data-translate-key="stack_overflow_link">Stack Overflow</span>
                             </a></p>
                             <p><a href="https://github.com/derekyuan1000" target="_blank" class="social-link">
-                                <i class="ri-github-line"></i> GitHub
+                                <i class="ri-github-line"></i> <span data-translate-key="github_link">GitHub</span>
                             </a></p>
                         </div>
                     </div>
@@ -148,9 +154,9 @@
     <!-- Skills Section -->
     <section class="skills section-padding" data-aos="fade-up" data-aos-duration="800">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title" data-translate-key="skills_title">Technical Skills</h2>
             <div class="section-divider"></div>
-            <p class="section-subtitle">Technologies I work with</p>
+            <p class="section-subtitle" data-translate-key="skills_subtitle">Technologies I work with</p>
         </div>
         <div class="skills-grid">
             <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
@@ -249,7 +255,7 @@
     <!-- Stats Section -->
     <section class="stats-section section-padding" data-aos="fade-up" data-aos-duration="800">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Journey in Numbers</h2>
+            <h2 class="section-title" data-translate-key="stats_title">Journey in Numbers</h2>
             <div class="section-divider"></div>
         </div>
         <div class="stats-grid">
@@ -258,28 +264,28 @@
                     <i class="ri-code-line"></i>
                 </div>
                 <div class="stat-number" data-target="15">0</div>
-                <div class="stat-label">Years Old</div>
+                <div class="stat-label" data-translate-key="stats_years_old">Years Old</div>
             </div>
             <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
                 <div class="stat-icon">
                     <i class="ri-folder-line"></i>
                 </div>
                 <div class="stat-number" data-target="20">0</div>
-                <div class="stat-label">Projects</div>
+                <div class="stat-label" data-translate-key="stats_projects">Projects</div>
             </div>
             <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
                 <div class="stat-icon">
                     <i class="ri-git-branch-line"></i>
                 </div>
                 <div class="stat-number" data-target="200">0</div>
-                <div class="stat-label">Commits</div>
+                <div class="stat-label" data-translate-key="stats_commits">Commits</div>
             </div>
             <div class="stat-item" data-aos="fade-up" data-aos-delay="800">
                 <div class="stat-icon">
                     <i class="ri-trophy-line"></i>
                 </div>
                 <div class="stat-number" data-target="23">0</div>
-                <div class="stat-label">Certifications</div>
+                <div class="stat-label" data-translate-key="stats_certifications">Certifications</div>
             </div>
         </div>
     </section>
@@ -287,18 +293,18 @@
     <!-- CTA Section -->
     <section class="cta-section section-padding" data-aos="fade-up" data-aos-duration="800">
         <div class="cta-content">
-            <h2 data-aos="fade-up">Ready to Collaborate?</h2>
-            <p data-aos="fade-up" data-aos-delay="200">
+            <h2 data-aos="fade-up" data-translate-key="cta_title">Ready to Collaborate?</h2>
+            <p data-aos="fade-up" data-aos-delay="200" data-translate-key="cta_subtitle">
                 Let's create something amazing together. I'm always open to discussing new opportunities and innovative projects.
             </p>
             <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
                 <a href="projects.html" class="btn btn-primary">
                     <i class="ri-eye-line"></i>
-                    View My Work
+                    <span data-translate-key="cta_btn_view_work">View My Work</span>
                 </a>
                 <a href="mailto:mail@derekyuan.co.uk" class="btn btn-secondary">
                     <i class="ri-mail-line"></i>
-                    Get In Touch
+                    <span data-translate-key="cta_btn_get_in_touch">Get In Touch</span>
                 </a>
             </div>
         </div>
@@ -308,7 +314,7 @@
 <footer data-aos="fade-up" data-aos-duration="800">
     <div class="footer-content">
         <div class="footer-text">
-            <p>&copy; <span id="current-year">2025</span> Derek Yuan. All rights reserved.</p>
+            <p>&copy; <span id="current-year">2025</span> <span data-translate-key="footer_copyright">Derek Yuan. All rights reserved.</span></p>
         </div>
         <div class="footer-social">
             <a href="https://github.com/derekyuan1000" target="_blank" class="social-icon">
