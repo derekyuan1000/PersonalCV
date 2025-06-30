@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS animation library
-    AOS.init();
+    // AOS is initialized in script.js
 
     // Get all filter buttons and certification cards
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -80,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Trigger stat animation when stats section comes into view
     const statsSection = document.querySelector('.achievement-stats');
-    const statsAnimated = false;
+    let statsAnimated = false; // Changed const to let
 
     function checkStats() {
         if (statsSection && isInViewport(statsSection) && !statsAnimated) {
@@ -93,6 +92,5 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkStats);
     checkStats(); // Check on page load
 
-    // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+    // Current year is set in script.js
 });
