@@ -327,7 +327,6 @@ function translatePage() {
                     childSpan.textContent = translations[lang][key];
                 } else if (!childSpan) { // No span, set text content directly (less ideal for complex buttons)
                     // This case should be rare if HTML is structured with spans for text in buttons
-                    let content = "";
                     let iconHTML = "";
                     const icon = element.querySelector('i');
                     if (icon) iconHTML = icon.outerHTML + " ";
