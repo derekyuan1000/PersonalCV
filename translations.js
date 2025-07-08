@@ -396,3 +396,5 @@ document.addEventListener('DOMContentLoaded', () => {
     langToggleButton.addEventListener('click', toggleLanguage);
   }
 });
+
+
