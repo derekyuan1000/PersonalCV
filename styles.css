@@ -27,6 +27,24 @@ body {
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--light-bg);
+    overflow-x: hidden;
+}
+
+/* Three.js Canvas */
+#threejs-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Ensure content is above canvas */
+nav, section, footer {
+    position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -39,11 +57,13 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 1rem 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .navbar .container {
@@ -98,7 +118,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
     padding-top: 80px;
     position: relative;
     overflow: hidden;
@@ -112,9 +132,21 @@ body {
     background: var(--gradient);
     border-radius: 50%;
     filter: blur(100px);
-    opacity: 0.2;
+    opacity: 0.15;
     top: -200px;
     right: -200px;
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.15;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.25;
+    }
 }
 
 .hero-content {
@@ -334,8 +366,8 @@ section {
 }
 
 .tech-badge:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
+    transform: translateY(-5px) rotateY(10deg) scale(1.1);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
     background: white;
     border-color: var(--primary-color);
 }
@@ -377,12 +409,12 @@ section {
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     border: 1px solid #e2e8f0;
+    transform-style: preserve-3d;
 }
 
 .skill-category:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
+    transform: translateY(-10px) rotateX(2deg) rotateY(2deg) scale(1.02);
+    box-shadow: 0 25px 50px rgba(37, 99, 235, 0.3);
 }
 
 .skill-category .skill-icon {
@@ -472,11 +504,12 @@ section {
     box-shadow: var(--shadow);
     cursor: pointer;
     transition: all 0.3s;
+    transform-style: preserve-3d;
 }
 
 .cert-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px) rotateX(2deg) scale(1.03);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
 }
 
 .cert-card img {
@@ -528,11 +561,12 @@ section {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: all 0.3s;
+    transform-style: preserve-3d;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-10px) rotateX(2deg) scale(1.02);
+    box-shadow: 0 25px 50px rgba(37, 99, 235, 0.3);
 }
 
 .project-image img {
@@ -616,11 +650,12 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transform-style: preserve-3d;
 }
 
 .contribution-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px) rotateY(2deg) scale(1.02);
+    box-shadow: 0 25px 50px rgba(37, 99, 235, 0.3);
 }
 
 .contribution-header {
@@ -858,6 +893,144 @@ section {
 .footer p {
     margin: 0.5rem 0;
     color: #94a3b8;
+}
+
+/* Enhanced card 3D effects */
+.skill-category,
+.cert-card,
+.project-card,
+.contribution-card,
+.stat-card {
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform;
+}
+
+.skill-category:hover,
+.project-card:hover,
+.contribution-card:hover {
+    transform: translateY(-10px) rotateX(2deg) rotateY(2deg) scale(1.02);
+    box-shadow: 0 25px 50px rgba(37, 99, 235, 0.3);
+}
+
+.cert-card:hover {
+    transform: translateY(-8px) rotateX(2deg) scale(1.03);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px) rotateZ(-2deg) scale(1.05);
+}
+
+/* Glassmorphism effect */
+.about,
+.skills,
+.certifications,
+.projects,
+.contributions,
+.contact {
+    background: rgba(248, 250, 252, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+section:nth-child(even) {
+    background: rgba(241, 245, 249, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Tech badges with 3D effect */
+.tech-badge {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.tech-badge:hover {
+    transform: translateY(-5px) rotateY(10deg) scale(1.1);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Button 3D effects */
+.btn {
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:active {
+    transform: translateY(2px) scale(0.98);
+}
+
+/* Section titles with text shadow */
+.section-title {
+    text-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.section-title:hover {
+    transform: translateZ(10px);
+    text-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Hero image with 3D effect */
+.hero-image img {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 20px 40px rgba(37, 99, 235, 0.3));
+}
+
+.hero-image:hover img {
+    transform: translateZ(20px) scale(1.05) rotateY(5deg);
+    filter: drop-shadow(0 30px 60px rgba(37, 99, 235, 0.5));
+}
+
+/* Smooth animations for all interactive elements */
+* {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom cursor effect */
+body {
+    cursor: auto;
+}
+
+#custom-cursor {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+
+    #custom-cursor {
+        display: none;
+    }
+
+    .skill-category:hover,
+    .project-card:hover,
+    .contribution-card:hover,
+    .cert-card:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
 }
 
 @media (max-width: 968px) {
