@@ -83,7 +83,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.skill-category, .cert-card, .project-card, .stat-card').forEach(el => {
+document.querySelectorAll('.skill-category, .cert-card, .project-card, .stat-card, .tech-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -101,8 +101,6 @@ contactForm.addEventListener('submit', (e) => {
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
 
-    // In a real application, you would send this data to a server
-    // For now, we'll just show an alert
     alert(`Thank you for your message, ${name}! I'll get back to you soon at ${email}.`);
 
     // Reset form

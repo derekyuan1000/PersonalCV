@@ -318,55 +318,62 @@ section {
     background: white;
 }
 
+/* Technology Icons Grid */
+.tech-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 12px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.tech-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+    background: white;
+}
+
+.tech-item i {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    transition: all 0.3s;
+}
+
+.tech-item:hover i {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.tech-item span {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.skills-category-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 3rem 0 2rem;
+    color: var(--text-primary);
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-}
-
-.skill-category {
-    background: var(--light-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    transition: all 0.3s;
-    border: 2px solid transparent;
-}
-
-.skill-category:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-5px);
-    box-shadow: var(--shadow);
-}
-
-.skill-icon {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.skill-category h3 {
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-    font-size: 1.3rem;
-}
-
-.skill-category ul {
-    list-style: none;
-}
-
-.skill-category li {
-    padding: 0.5rem 0;
-    color: var(--text-secondary);
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.skill-category li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-size: 1.2rem;
 }
 
 /* Certifications Section */
