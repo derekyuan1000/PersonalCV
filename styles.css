@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +35,6 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -96,7 +94,6 @@ body {
     transition: 0.3s;
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -225,7 +222,6 @@ body {
     }
 }
 
-/* Section Styles */
 section {
     padding: 5rem 0;
 }
@@ -244,7 +240,6 @@ section {
     margin-bottom: 3rem;
 }
 
-/* About Section */
 .about {
     background: var(--light-bg);
 }
@@ -313,12 +308,10 @@ section {
     margin-top: 0.5rem;
 }
 
-/* Skills Section */
 .skills {
     background: white;
 }
 
-/* Technology Icons - Compact Badges */
 .tech-icons-compact {
     display: flex;
     flex-wrap: wrap;
@@ -436,7 +429,6 @@ section {
     font-size: 1.2rem;
 }
 
-/* Certifications Section */
 .certifications {
     background: var(--light-bg);
 }
@@ -520,7 +512,6 @@ section {
     font-size: 0.9rem;
 }
 
-/* Projects Section */
 .projects {
     background: white;
 }
@@ -605,7 +596,6 @@ section {
     color: var(--accent-color);
 }
 
-/* Contributions Section */
 .contributions {
     background: var(--light-bg);
 }
@@ -747,7 +737,6 @@ section {
     gap: 0.5rem;
 }
 
-/* Contact Section */
 .contact {
     background: var(--dark-bg);
     color: var(--text-light);
@@ -859,7 +848,6 @@ section {
     transform: translateY(-5px);
 }
 
-/* Footer */
 .footer {
     background: #020617;
     color: var(--text-light);
@@ -872,7 +860,6 @@ section {
     color: #94a3b8;
 }
 
-/* Responsive Design */
 @media (max-width: 968px) {
     .nav-menu {
         position: fixed;

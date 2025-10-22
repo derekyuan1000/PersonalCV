@@ -1,4 +1,3 @@
-// Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -6,14 +5,12 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
     });
 });
 
-// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -27,15 +24,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Certification Filter
 const filterButtons = document.querySelectorAll('.filter-btn');
 const certCards = document.querySelectorAll('.cert-card');
 
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
         button.classList.add('active');
 
         const filterValue = button.getAttribute('data-filter');
@@ -67,7 +61,6 @@ filterButtons.forEach(button => {
     });
 });
 
-// Add animation on scroll
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -82,7 +75,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation
 document.querySelectorAll('.skill-category, .cert-card, .project-card, .stat-card, .tech-badge').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
@@ -90,7 +82,6 @@ document.querySelectorAll('.skill-category, .cert-card, .project-card, .stat-car
     observer.observe(el);
 });
 
-// Contact Form Handler
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', (e) => {
@@ -98,16 +89,12 @@ contactForm.addEventListener('submit', (e) => {
 
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
 
     alert(`Thank you for your message, ${name}! I'll get back to you soon at ${email}.`);
 
-    // Reset form
     contactForm.reset();
 });
 
-// Navbar background change on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
@@ -117,7 +104,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Certification card click to view full image
 certCards.forEach(card => {
     card.addEventListener('click', () => {
         const img = card.querySelector('img');
@@ -154,7 +140,6 @@ certCards.forEach(card => {
     });
 });
 
-// Add particle effect to hero section (optional enhancement)
 function createParticles() {
     const hero = document.querySelector('.hero');
     const particleCount = 50;
@@ -179,10 +164,8 @@ function createParticles() {
     }
 }
 
-// Initialize particles
 createParticles();
 
-// Counter animation for stats
 function animateCounter(element, target, duration) {
     let start = 0;
     const increment = target / (duration / 16);
@@ -200,7 +183,6 @@ function animateCounter(element, target, duration) {
     updateCounter();
 }
 
-// Observe stats and animate when visible
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
