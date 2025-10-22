@@ -648,4 +648,5 @@ document.querySelectorAll('.project-card, .skill-category').forEach(card => {
     });
 });
 
+
 console.log('Derek Yuan CV Website Loaded Successfully!');
