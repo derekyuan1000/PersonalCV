@@ -83,7 +83,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.skill-category, .cert-card, .project-card, .stat-card, .tech-item').forEach(el => {
+document.querySelectorAll('.skill-category, .cert-card, .project-card, .stat-card, .tech-badge').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

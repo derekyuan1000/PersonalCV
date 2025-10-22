@@ -318,49 +318,50 @@ section {
     background: white;
 }
 
-/* Technology Icons Grid */
-.tech-icons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 2rem;
+/* Technology Icons - Compact Badges */
+.tech-icons-compact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
     margin-bottom: 3rem;
     padding: 2rem 0;
 }
 
-.tech-item {
-    display: flex;
-    flex-direction: column;
+.tech-badge {
+    display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    padding: 1.5rem;
+    gap: 0.6rem;
+    padding: 0.8rem 1.2rem;
     background: var(--light-bg);
-    border-radius: 12px;
+    border-radius: 25px;
     transition: all 0.3s;
     cursor: pointer;
+    border: 2px solid transparent;
 }
 
-.tech-item:hover {
-    transform: translateY(-10px);
+.tech-badge:hover {
+    transform: translateY(-5px);
     box-shadow: var(--shadow);
     background: white;
+    border-color: var(--primary-color);
 }
 
-.tech-item i {
-    font-size: 3.5rem;
+.tech-badge i {
+    font-size: 1.5rem;
     color: var(--primary-color);
     transition: all 0.3s;
 }
 
-.tech-item:hover i {
+.tech-badge:hover i {
     color: var(--accent-color);
     transform: scale(1.1);
 }
 
-.tech-item span {
+.tech-badge span {
     font-weight: 600;
     color: var(--text-primary);
-    font-size: 0.9rem;
-    text-align: center;
+    font-size: 0.95rem;
 }
 
 .skills-category-title {
@@ -374,6 +375,65 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+}
+
+.skill-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.skill-category .skill-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.skill-category .skill-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.skill-category h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.skill-category ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 /* Certifications Section */
