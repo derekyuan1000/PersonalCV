@@ -1,150 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Derek Yuan - Personal CV</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="translations.js" defer></script>
-    <script src="script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derek Yuan - Full Stack Developer & Software Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<!-- Animated Background -->
-<div class="animated-bg">
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
-    </div>
-</div>
-
-<header data-aos="fade-down" data-aos-duration="1000">
-    <div class="header-content">
-        <div class="logo-area">
-            <h1 style="white-space: nowrap;"><a href="index.html" style="white-space: nowrap;">Derek Yuan</a></h1>
-            <p id="title" class="typewriter" data-translate-key="title_passionate_developer">A passionate 15 Year old developer from the UK</p>
-        </div>
-        <nav>
-            <button class="hamburger" aria-label="Open navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul>
-                <li><a href="index.html" class="active" data-translate-key="nav_home">Home</a></li>
-                <li><a href="projects.html" data-translate-key="nav_projects">Projects</a></li>
-                <li><a href="contributions.html" data-translate-key="nav_contributions">Contributions</a></li>
-                <li><a href="certifications.html" data-translate-key="nav_certifications">Certifications</a></li>
-                <li>
-                    <button id="language-toggle" class="nav-button-base language-toggle-btn" aria-label="Toggle language">
-                        <span data-translate-key="toggle_language_btn">中文</span>
-                    </button>
-                </li>
-                <li>
-                    <button class="nav-button-base theme-toggle-icon-btn" aria-label="Toggle dark mode">
-                        <i class="ri-moon-line" id="theme-icon"></i>
-                    </button>
-                </li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Derek Yuan</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contributions">Contributions</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </div>
-</header>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<!-- Hero Section -->
-<section class="hero-section" data-aos="fade-up" data-aos-duration="1200">
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1 class="hero-title">
-                <span class="gradient-text" data-translate-key="hero_greeting">Hello, I'm Derek</span>
-            </h1>
-            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300" data-translate-key="hero_subtitle">
-                Crafting digital experiences with passion and precision
-            </p>
-            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
-                <a href="#about" class="btn btn-primary pulse-animation">
-                    <i class="ri-user-line"></i>
-                    <span data-translate-key="hero_btn_about">About Me</span>
-                </a>
-                <a href="projects.html" class="btn btn-secondary">
-                    <i class="ri-code-line"></i>
-                    <span data-translate-key="hero_btn_view_projects">View Projects</span>
-                </a>
-            </div>
-        </div>
-        <div class="hero-visual" data-aos="zoom-in" data-aos-delay="400">
-            <div class="profile-circle">
-                <img src="images/Profile%20Picture.jpg" alt="Derek Yuan" class="hero-image">
-                <div class="orbit-ring ring-1"></div>
-                <div class="orbit-ring ring-2"></div>
-                <div class="orbit-ring ring-3"></div>
-            </div>
-        </div>
-    </div>
-    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
-        <div class="scroll-arrow">
-            <i class="ri-arrow-down-line"></i>
-        </div>
-        <span data-translate-key="hero_scroll_explore">Scroll to explore</span>
-    </div>
-</section>
-
-<main>
-    <!-- About Section -->
-    <section id="about" class="profile section-padding" data-aos="fade-up" data-aos-duration="800">
-        <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title" data-translate-key="about_title">About Me</h2>
-            <div class="section-divider"></div>
-        </div>
-        <div class="profile-container">
-            <div class="profile-image" data-aos="fade-right" data-aos-delay="200">
-                <div class="image-wrapper">
-                    <img src="images/Profile%20Picture.jpg" alt="Profile Picture" id="profile-pic">
-                    <div class="image-overlay"></div>
-                </div>
-            </div>
-            <div class="profile-content" data-aos="fade-left" data-aos-delay="400">
-                <div class="profile-text">
-                    <p class="intro-text" data-translate-key="about_intro_1">
-                        Welcome to my digital space! I'm Derek Yuan, a passionate young developer
-                        with a love for creating innovative solutions and exploring cutting-edge technologies.
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight">Derek Yuan</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Full Stack Developer & Software Engineer</h2>
+                    <p class="hero-description">
+                        Passionate about building innovative solutions with expertise in Python, C#, Unity, Web Development,
+                        Data Science, Machine Learning, DevOps, and Cybersecurity.
                     </p>
-                    <p data-translate-key="about_intro_2">
-                        At just 15 years old, I've already immersed myself in the world of software development,
-                        constantly learning and pushing the boundaries of what's possible.
-                    </p>
-                </div>
-                <div class="profile-details">
-                    <div class="detail" data-aos="fade-up" data-aos-delay="600">
-                        <div class="detail-icon">
-                            <i class="ri-mail-line"></i>
-                        </div>
-                        <div class="detail-content">
-                            <h3 data-translate-key="contact_heading">Contact</h3>
-                            <p>mail@derekyuan.co.uk</p>
-                            <p>derekyuan10000@gmail.com</p>
-                            <p>📱 07856433096</p>
-                            <p>📍 Trumpington, Cambridge, UK</p>
-                        </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="#certifications" class="btn btn-secondary">View Certifications</a>
                     </div>
-                    <div class="detail" data-aos="fade-up" data-aos-delay="800">
-                        <div class="detail-icon">
-                            <i class="ri-links-line"></i>
-                        </div>
-                        <div class="detail-content">
-                            <h3 data-translate-key="connect_heading">Connect</h3>
-                            <p><a href="https://stackoverflow.com/users/25452143/derek-yuan" target="_blank" class="social-link">
-                                <i class="ri-stack-overflow-line"></i> <span data-translate-key="stack_overflow_link">Stack Overflow</span>
-                            </a></p>
-                            <p><a href="https://github.com/derekyuan1000" target="_blank" class="social-link">
-                                <i class="ri-github-line"></i> <span data-translate-key="github_link">GitHub</span>
-                            </a></p>
-                        </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/Profile Picture.jpg" alt="Derek Yuan">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a highly motivated and versatile software engineer with a comprehensive skill set spanning
+                        multiple domains of technology. With 20+ professional certifications, I bring expertise in:
+                    </p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check"></i> Full Stack Web Development (Django, JavaScript, HTML/CSS)</li>
+                        <li><i class="fas fa-check"></i> Game Development (Unity 3D/2D, C#)</li>
+                        <li><i class="fas fa-check"></i> Data Science & Machine Learning</li>
+                        <li><i class="fas fa-check"></i> Python Development & Automation</li>
+                        <li><i class="fas fa-check"></i> Mobile Development (Android with Kotlin)</li>
+                        <li><i class="fas fa-check"></i> DevOps & System Administration (Red Hat)</li>
+                        <li><i class="fas fa-check"></i> Cybersecurity & Ethical Hacking</li>
+                        <li><i class="fas fa-check"></i> Microsoft Office Suite (Expert Level)</li>
+                    </ul>
+                    <p>
+                        I am committed to continuous learning and staying at the forefront of technology,
+                        always seeking new challenges and opportunities to grow.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Dedication</div>
                     </div>
                 </div>
             </div>
@@ -152,182 +98,829 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="skills section-padding" data-aos="fade-up" data-aos-duration="800">
-        <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title" data-translate-key="skills_title">Technical Skills</h2>
-            <div class="section-divider"></div>
-            <p class="section-subtitle" data-translate-key="skills_subtitle">Technologies I work with</p>
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C# / .NET</li>
+                        <li>JavaScript</li>
+                        <li>C++</li>
+                        <li>Kotlin</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>Django Framework</li>
+                        <li>Front-End Development</li>
+                        <li>JavaScript & jQuery</li>
+                        <li>Responsive Design</li>
+                        <li>Full Stack Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Game Development</h3>
+                    <ul>
+                        <li>Unity 3D/2D</li>
+                        <li>C# Game Programming</li>
+                        <li>RPG Development</li>
+                        <li>FPS Development</li>
+                        <li>Game Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Data Science & AI</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Data Science</li>
+                        <li>Python Data Analysis</li>
+                        <li>Trading Bots</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Development</h3>
+                    <ul>
+                        <li>Android Development</li>
+                        <li>Kotlin</li>
+                        <li>Mobile App Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>DevOps & Security</h3>
+                    <ul>
+                        <li>DevOps Engineering</li>
+                        <li>Red Hat Linux</li>
+                        <li>System Administration</li>
+                        <li>Ethical Hacking</li>
+                        <li>Cybersecurity</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="skills-grid">
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
-                <a href="https://developer.android.com" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="Android" />
-                    <span>Android</span>
-                </a>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <p class="section-subtitle">Professional certifications demonstrating expertise across multiple domains</p>
+
+            <div class="cert-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="game">Game Dev</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="data">Data Science</button>
+                <button class="filter-btn" data-filter="microsoft">Microsoft</button>
+                <button class="filter-btn" data-filter="other">Other</button>
             </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
-                <a href="https://www.blender.org/" target="_blank" rel="noreferrer">
-                    <img src="https://download.blender.org/branding/community/blender_community_badge_white.svg" alt="Blender" />
-                    <span>Blender</span>
-                </a>
+
+            <div class="certifications-grid">
+                <!-- Python Certifications -->
+                <div class="cert-card" data-category="python">
+                    <img src="images/CERTIFICATION/100 Days of Code The Complete Python Pro Bootcamp.jpg" alt="Python Pro Bootcamp">
+                    <div class="cert-overlay">
+                        <h3>100 Days of Code: Python Pro Bootcamp</h3>
+                        <p>Comprehensive Python programming course</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="python">
+                    <img src="images/CERTIFICATION/Python From Zero to Hero - Code Your Way to the Top.jpg" alt="Python Zero to Hero">
+                    <div class="cert-overlay">
+                        <h3>Python From Zero to Hero</h3>
+                        <p>Advanced Python development</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="python">
+                    <img src="images/CERTIFICATION/Intermediate Python Immersive Training Boost your career.jpg" alt="Intermediate Python">
+                    <div class="cert-overlay">
+                        <h3>Intermediate Python Immersive Training</h3>
+                        <p>Professional Python development</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="python">
+                    <img src="images/CERTIFICATION/The Python Developer Essentials Immersive Bootcamp.jpg" alt="Python Developer Essentials">
+                    <div class="cert-overlay">
+                        <h3>Python Developer Essentials Bootcamp</h3>
+                        <p>Essential Python skills</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="python">
+                    <img src="images/CERTIFICATION/Ethical Hacking Learn The Art of Hacking Using Python3.jpg" alt="Ethical Hacking with Python">
+                    <div class="cert-overlay">
+                        <h3>Ethical Hacking with Python</h3>
+                        <p>Cybersecurity and Python</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="python data">
+                    <img src="images/CERTIFICATION/DYDX Pairs Trading Bot Build in Python Running in the Cloud.jpg" alt="Trading Bot">
+                    <div class="cert-overlay">
+                        <h3>DYDX Trading Bot Development</h3>
+                        <p>Python trading automation</p>
+                    </div>
+                </div>
+
+                <!-- Game Development -->
+                <div class="cert-card" data-category="game">
+                    <img src="images/CERTIFICATION/Complete CSharp Unity Game Developer 2D.jpg" alt="Unity 2D">
+                    <div class="cert-overlay">
+                        <h3>Complete C# Unity Game Developer 2D</h3>
+                        <p>2D game development with Unity</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="game">
+                    <img src="images/CERTIFICATION/Complete CSharp Unity Game Developer 3D (Updated To Unity 6).jpg" alt="Unity 3D">
+                    <div class="cert-overlay">
+                        <h3>Complete C# Unity Game Developer 3D</h3>
+                        <p>Updated to Unity 6</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="game">
+                    <img src="images/CERTIFICATION/Masterclass in CSharp Programing & Unity 3D Game Development FPS.jpg" alt="FPS Development">
+                    <div class="cert-overlay">
+                        <h3>C# & Unity 3D FPS Development</h3>
+                        <p>First-person shooter game development</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="game">
+                    <img src="images/CERTIFICATION/RPG Core Combat Creator Learn Intermediate Unity CSharp Coding.jpg" alt="RPG Development">
+                    <div class="cert-overlay">
+                        <h3>RPG Core Combat Creator</h3>
+                        <p>Intermediate Unity C# coding</p>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="cert-card" data-category="web">
+                    <img src="images/CERTIFICATION/Full Stack Web Application Development with Django Framework.jpg" alt="Django">
+                    <div class="cert-overlay">
+                        <h3>Full Stack Web Development with Django</h3>
+                        <p>Python Django framework</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="web">
+                    <img src="images/CERTIFICATION/edX Front End Web Developer Professional Certificate Program HTML.jpg" alt="Front End Developer">
+                    <div class="cert-overlay">
+                        <h3>edX Front-End Web Developer Certificate</h3>
+                        <p>Professional certificate program</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="web">
+                    <img src="images/CERTIFICATION/JavaScript & jQuery - Certification Course for Beginners.jpg" alt="JavaScript & jQuery">
+                    <div class="cert-overlay">
+                        <h3>JavaScript & jQuery Certification</h3>
+                        <p>Front-end development</p>
+                    </div>
+                </div>
+
+                <!-- Data Science & AI -->
+                <div class="cert-card" data-category="data">
+                    <img src="images/CERTIFICATION/Complete 2022 Data Science & Machine Learning Bootcamp.jpg" alt="Data Science">
+                    <div class="cert-overlay">
+                        <h3>Data Science & Machine Learning Bootcamp</h3>
+                        <p>Comprehensive data science training</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="data">
+                    <img src="images/CERTIFICATION/CS50's Introduction to Artificial Intelligence with Python.jpg" alt="AI with Python">
+                    <div class="cert-overlay">
+                        <h3>CS50's Introduction to AI with Python</h3>
+                        <p>Harvard's AI course</p>
+                    </div>
+                </div>
+
+                <!-- Microsoft Certifications -->
+                <div class="cert-card" data-category="microsoft">
+                    <img src="images/CERTIFICATION/Microsoft Office Specialist Associate (Microsoft 365 Apps).jpg" alt="MOS Associate">
+                    <div class="cert-overlay">
+                        <h3>Microsoft Office Specialist Associate</h3>
+                        <p>Microsoft 365 Apps</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="microsoft">
+                    <img src="images/CERTIFICATION/Microsoft Office Specialist Excel Expert (Office 2019).jpg" alt="Excel Expert">
+                    <div class="cert-overlay">
+                        <h3>MS Excel Expert</h3>
+                        <p>Office 2019</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="microsoft">
+                    <img src="images/CERTIFICATION/Microsoft Office Specialist Word Expert (Office 2019).jpg" alt="Word Expert">
+                    <div class="cert-overlay">
+                        <h3>MS Word Expert</h3>
+                        <p>Office 2019</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="microsoft">
+                    <img src="images/CERTIFICATION/Microsoft Office Specialist PowerPoint Associate (Office 2019).jpg" alt="PowerPoint">
+                    <div class="cert-overlay">
+                        <h3>MS PowerPoint Associate</h3>
+                        <p>Office 2019</p>
+                    </div>
+                </div>
+
+                <!-- Other Certifications -->
+                <div class="cert-card" data-category="other">
+                    <img src="images/CERTIFICATION/Associate Android Developer certification in Kotlin.jpg" alt="Android Developer">
+                    <div class="cert-overlay">
+                        <h3>Associate Android Developer in Kotlin</h3>
+                        <p>Mobile app development</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="other">
+                    <img src="images/CERTIFICATION/DevOps Engineering - A Complete Guide.jpg" alt="DevOps">
+                    <div class="cert-overlay">
+                        <h3>DevOps Engineering - Complete Guide</h3>
+                        <p>DevOps practices and tools</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="other">
+                    <img src="images/CERTIFICATION/Red Hat Certified System Administrator.jpg" alt="Red Hat">
+                    <div class="cert-overlay">
+                        <h3>Red Hat Certified System Administrator</h3>
+                        <p>Linux system administration</p>
+                    </div>
+                </div>
+                <div class="cert-card" data-category="other">
+                    <img src="images/CERTIFICATION/Learn C++ Object Oriented Programming the easy way.jpg" alt="C++">
+                    <div class="cert-overlay">
+                        <h3>C++ Object Oriented Programming</h3>
+                        <p>OOP fundamentals</p>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
-                <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" />
-                    <span>CSS3</span>
-                </a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Showcasing innovative solutions and creative work</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/PixelMasterX.png" alt="PixelMasterX">
+                    </div>
+                    <div class="project-content">
+                        <h3>PixelMasterX</h3>
+                        <p>An innovative pixel art and graphics project showcasing advanced development skills.</p>
+                        <div class="project-tags">
+                            <span class="tag">Graphics</span>
+                            <span class="tag">Creative</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/PixelMasterX" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>DragonBot - LiChess Bot</h3>
+                        <p>Advanced chess bot for Lichess platform with sophisticated AI algorithms and strategy implementation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Chess</span>
+                            <span class="tag">AI</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/DragonBot-LiChessBot" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-chess-board"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Chess Toolkit</h3>
+                        <p>Comprehensive chess toolkit with utilities, analysis tools, and training features for chess enthusiasts.</p>
+                        <div class="project-tags">
+                            <span class="tag">Chess</span>
+                            <span class="tag">Tools</span>
+                            <span class="tag">Analysis</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/ChessToolkit" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Chess Pairings</h3>
+                        <p>Tournament pairing system for chess competitions with Swiss system and round-robin support.</p>
+                        <div class="project-tags">
+                            <span class="tag">Chess</span>
+                            <span class="tag">Tournament</span>
+                            <span class="tag">Algorithm</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/ChessPairings" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Chess Webdigger</h3>
+                        <p>Web scraping and analysis tool for chess databases and online chess platforms.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Web Scraping</span>
+                            <span class="tag">Chess</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/ChessWebdigger" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Multiplayer WebSocket</h3>
+                        <p>Real-time multiplayer game infrastructure using WebSocket technology for seamless player interactions.</p>
+                        <div class="project-tags">
+                            <span class="tag">WebSocket</span>
+                            <span class="tag">Real-time</span>
+                            <span class="tag">Multiplayer</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/Multiplayer-Websocket" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-sort-amount-down"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sorting Algorithm Visualiser</h3>
+                        <p>Interactive visualization tool for various sorting algorithms with step-by-step animation and performance metrics.</p>
+                        <div class="project-tags">
+                            <span class="tag">Algorithms</span>
+                            <span class="tag">Visualization</span>
+                            <span class="tag">Education</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/SortingAlgorithmVisualiser" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Neural Network</h3>
+                        <p>Custom neural network implementation from scratch, demonstrating deep learning fundamentals and AI concepts.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/NeuralNetwork" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Messaging App</h3>
+                        <p>Real-time messaging application with chat features, user authentication, and modern UI/UX design.</p>
+                        <div class="project-tags">
+                            <span class="tag">Real-time</span>
+                            <span class="tag">Chat</span>
+                            <span class="tag">Web App</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/MessagingApp" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>QuickNotzz</h3>
+                        <p>Fast and efficient note-taking application with markdown support and cloud synchronization.</p>
+                        <div class="project-tags">
+                            <span class="tag">Productivity</span>
+                            <span class="tag">Notes</span>
+                            <span class="tag">App</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/QuickNotzz" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>To-Do List</h3>
+                        <p>Task management application with priority sorting, deadlines, and progress tracking features.</p>
+                        <div class="project-tags">
+                            <span class="tag">Productivity</span>
+                            <span class="tag">Tasks</span>
+                            <span class="tag">Web App</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/To-DoList" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>EasyGit</h3>
+                        <p>Simplified Git interface and workflow manager making version control more accessible for developers.</p>
+                        <div class="project-tags">
+                            <span class="tag">Git</span>
+                            <span class="tag">DevOps</span>
+                            <span class="tag">Tool</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/EasyGit" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>FX-CG50 Mods</h3>
+                        <p>Custom modifications and programs for Casio FX-CG50 graphing calculator, enhancing functionality.</p>
+                        <div class="project-tags">
+                            <span class="tag">Calculator</span>
+                            <span class="tag">Mods</span>
+                            <span class="tag">C++</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/FX-CG50-mods" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>QuickTeck</h3>
+                        <p>Technology solutions and quick utilities for developers and tech enthusiasts.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tools</span>
+                            <span class="tag">Utilities</span>
+                            <span class="tag">Tech</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/QuickTeck" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Young Entrepreneur Website</h3>
+                        <p>Professional website for young entrepreneurs showcasing business ventures and opportunities.</p>
+                        <div class="project-tags">
+                            <span class="tag">Web Design</span>
+                            <span class="tag">Business</span>
+                            <span class="tag">HTML/CSS</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/youngentepreise-website" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>HackClub Demo Website</h3>
+                        <p>Demo website for Hack Club community showcasing club activities and coding projects.</p>
+                        <div class="project-tags">
+                            <span class="tag">Web Dev</span>
+                            <span class="tag">Community</span>
+                            <span class="tag">Demo</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/HackClub-DemoWebsite" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Youthacks Token System</h3>
+                        <p>Token-based reward system for youth hackathon events, managing points and achievements.</p>
+                        <div class="project-tags">
+                            <span class="tag">System</span>
+                            <span class="tag">Hackathon</span>
+                            <span class="tag">Rewards</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/Youthacks-Token-System" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Personal CV</h3>
+                        <p>This website! A modern, responsive portfolio showcasing skills, certifications, and projects.</p>
+                        <div class="project-tags">
+                            <span class="tag">Portfolio</span>
+                            <span class="tag">Web Design</span>
+                            <span class="tag">HTML/CSS/JS</span>
+                        </div>
+                        <a href="https://github.com/derekyuan1000/PersonalCV" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
-                <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer">
-                    <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="Django" />
-                    <span>Django</span>
-                </a>
+        </div>
+    </section>
+
+    <!-- Contributions Section -->
+    <section id="contributions" class="contributions">
+        <div class="container">
+            <h2 class="section-title">Open Source Contributions</h2>
+            <p class="section-subtitle">Contributing to the open source community and collaborative projects</p>
+
+            <div class="contributions-grid">
+                <div class="contribution-card">
+                    <div class="contribution-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>aha</h3>
+                    </div>
+                    <p>Youth hackathon platform connecting young developers and fostering innovation.</p>
+                    <div class="contribution-footer">
+                        <span class="repo-owner">youthacks/aha</span>
+                        <a href="https://github.com/youthacks/aha" target="_blank" class="contrib-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-header">
+                        <i class="fas fa-archive"></i>
+                        <h3>aha-archive</h3>
+                    </div>
+                    <p>Archived version of the aha platform preserving historical hackathon data and projects.</p>
+                    <div class="contribution-footer">
+                        <span class="repo-owner">youthacks/aha-archive</span>
+                        <a href="https://github.com/youthacks/aha-archive" target="_blank" class="contrib-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>aha-mobile</h3>
+                    </div>
+                    <p>Mobile application for the aha platform bringing hackathons to smartphones.</p>
+                    <div class="contribution-footer">
+                        <span class="repo-owner">youthacks/aha-mobile</span>
+                        <a href="https://github.com/youthacks/aha-mobile" target="_blank" class="contrib-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-header">
+                        <i class="fas fa-keyboard"></i>
+                        <h3>Monkeytype</h3>
+                    </div>
+                    <p>Popular typing test website with customizable tests and detailed statistics. Active contributor.</p>
+                    <div class="contribution-footer">
+                        <span class="repo-owner">monkeytypegame/monkeytype</span>
+                        <a href="https://github.com/monkeytypegame/monkeytype" target="_blank" class="contrib-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-header">
+                        <i class="fab fa-android"></i>
+                        <h3>Android Architecture Samples</h3>
+                    </div>
+                    <p>Official Android architecture samples from Google demonstrating best practices.</p>
+                    <div class="contribution-footer">
+                        <span class="repo-owner">android/architecture-samples</span>
+                        <a href="https://github.com/android/architecture-samples" target="_blank" class="contrib-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-header">
+                        <i class="fas fa-utensils"></i>
+                        <h3>MalumMenu</h3>
+                    </div>
+                    <p>Menu management system with modern interface and efficient ordering capabilities.</p>
+                    <div class="contribution-footer">
+                        <span class="repo-owner">scp222thj/MalumMenu</span>
+                        <a href="https://github.com/scp222thj/MalumMenu" target="_blank" class="contrib-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-header">
+                        <i class="fas fa-wallet"></i>
+                        <h3>HCB Mobile</h3>
+                    </div>
+                    <p>Mobile banking application with secure transactions and user-friendly interface.</p>
+                    <div class="contribution-footer">
+                        <span class="repo-owner">Forked Repository</span>
+                        <a href="https://github.com/derekyuan1000/hcb-mobile" target="_blank" class="contrib-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Kotlin</h3>
+                    </div>
+                    <p>Fork of the Kotlin programming language repository for learning and experimentation.</p>
+                    <div class="contribution-footer">
+                        <span class="repo-owner">JetBrains/kotlin</span>
+                        <a href="https://github.com/derekyuan1000/kotlin" target="_blank" class="contrib-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
-                <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-                    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" />
-                    <span>Git</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="600">
-                <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" />
-                    <span>HTML5</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="700">
-                <a href="https://www.java.com" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" />
-                    <span>Java</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="800">
-                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" />
-                    <span>JavaScript</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="900">
-                <a href="https://kotlinlang.org" target="_blank" rel="noreferrer">
-                    <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="Kotlin" />
-                    <span>Kotlin</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1000">
-                <a href="https://www.linux.org/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux" />
-                    <span>Linux</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1100">
-                <a href="https://nodejs.org" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" />
-                    <span>Node.js</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1200">
-                <a href="https://www.python.org" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" />
-                    <span>Python</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1300">
-                <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" />
-                    <span>React</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1400">
-                <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" />
-                    <span>TypeScript</span>
-                </a>
-            </div>
-            <div class="skill-item" data-aos="zoom-in" data-aos-delay="1500">
-                <a href="https://unity.com/" target="_blank" rel="noreferrer">
-                    <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="Unity" />
-                    <span>Unity</span>
+
+            <div class="github-stats">
+                <h3>GitHub Activity</h3>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <i class="fas fa-code-branch"></i>
+                        <div>
+                            <span class="stat-value">30+</span>
+                            <span class="stat-label">Repositories</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <span class="stat-value">Open Source</span>
+                            <span class="stat-label">Contributor</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <span class="stat-value">Community</span>
+                            <span class="stat-label">Active Member</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://github.com/derekyuan1000" target="_blank" class="btn btn-primary github-btn">
+                    <i class="fab fa-github"></i> Visit My GitHub Profile
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section section-padding" data-aos="fade-up" data-aos-duration="800">
-        <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title" data-translate-key="stats_title">Journey in Numbers</h2>
-            <div class="section-divider"></div>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-icon">
-                    <i class="ri-code-line"></i>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss your next project or opportunity</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>contact@derekyuan.co.uk</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Website</h3>
+                            <p>www.derekyuan.co.uk</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>United Kingdom</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-number" data-target="15">0</div>
-                <div class="stat-label" data-translate-key="stats_years_old">Years Old</div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
             </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="stat-icon">
-                    <i class="ri-folder-line"></i>
-                </div>
-                <div class="stat-number" data-target="20">0</div>
-                <div class="stat-label" data-translate-key="stats_projects">Projects</div>
-            </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
-                <div class="stat-icon">
-                    <i class="ri-git-branch-line"></i>
-                </div>
-                <div class="stat-number" data-target="200">0</div>
-                <div class="stat-label" data-translate-key="stats_commits">Commits</div>
-            </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="800">
-                <div class="stat-icon">
-                    <i class="ri-trophy-line"></i>
-                </div>
-                <div class="stat-number" data-target="23">0</div>
-                <div class="stat-label" data-translate-key="stats_certifications">Certifications</div>
+
+            <div class="social-links">
+                <a href="https://github.com/derekyuan1000" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://stackoverflow.com/users/25452143/derek-yuan" target="_blank" class="social-link"><i class="fab fa-stack-overflow"></i></a>
+                <a href="https://ko-fi.com/derekyuan" target="_blank" class="social-link"><i class="fas fa-coffee"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section section-padding" data-aos="fade-up" data-aos-duration="800">
-        <div class="cta-content">
-            <h2 data-aos="fade-up" data-translate-key="cta_title">Ready to Collaborate?</h2>
-            <p data-aos="fade-up" data-aos-delay="200" data-translate-key="cta_subtitle">
-                Let's create something amazing together. I'm always open to discussing new opportunities and innovative projects.
-            </p>
-            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
-                <a href="projects.html" class="btn btn-primary">
-                    <i class="ri-eye-line"></i>
-                    <span data-translate-key="cta_btn_view_work">View My Work</span>
-                </a>
-                <a href="mailto:mail@derekyuan.co.uk" class="btn btn-secondary">
-                    <i class="ri-mail-line"></i>
-                    <span data-translate-key="cta_btn_get_in_touch">Get In Touch</span>
-                </a>
-            </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Derek Yuan. All rights reserved.</p>
+            <p>Full Stack Developer | Software Engineer</p>
         </div>
-    </section>
-</main>
+    </footer>
 
-<footer data-aos="fade-up" data-aos-duration="800">
-    <div class="footer-content">
-        <div class="footer-text">
-            <p>&copy; <span id="current-year">2025</span> <span data-translate-key="footer_copyright">Derek Yuan. All rights reserved.</span></p>
-        </div>
-        <div class="footer-social">
-            <a href="https://github.com/derekyuan1000" target="_blank" class="social-icon">
-                <i class="ri-github-line"></i>
-            </a>
-            <a href="https://stackoverflow.com/users/25452143/derek-yuan" target="_blank" class="social-icon">
-                <i class="ri-stack-overflow-line"></i>
-            </a>
-            <a href="mailto:mail@derekyuan.co.uk" class="social-icon">
-                <i class="ri-mail-line"></i>
-            </a>
-        </div>
-    </div>
-</footer>
+    <script src="script.js"></script>
 </body>
 </html>
