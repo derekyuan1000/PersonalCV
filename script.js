@@ -649,4 +649,179 @@ document.querySelectorAll('.project-card, .skill-category').forEach(card => {
 });
 
 
+
 console.log('Derek Yuan CV Website Loaded Successfully!');
+
+// =======================
+// INTERACTIVE DOTS FOR ABOUT SECTION
+// =======================
+(function() {
+    const canvas = document.getElementById('about-dots-canvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const aboutSection = document.getElementById('about');
+    
+    let dots = [];
+    let mouse = { x: null, y: null };
+    let canvasRect = null;
+    
+    // Configuration
+    const config = {
+        dotCount: 80,
+        dotRadius: 3,
+        maxSpeed: 2,
+        mouseRadius: 120,
+        repelStrength: 3,
+        returnSpeed: 0.05,
+        colors: ['#2563eb', '#7c3aed', '#06b6d4']
+    };
+    
+    // Dot class
+    class Dot {
+        constructor() {
+            this.reset();
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+        }
+        
+        reset() {
+            this.baseX = Math.random() * canvas.width;
+            this.baseY = Math.random() * canvas.height;
+            this.x = this.baseX;
+            this.y = this.baseY;
+            this.vx = 0;
+            this.vy = 0;
+            this.color = config.colors[Math.floor(Math.random() * config.colors.length)];
+            this.radius = config.dotRadius * (0.5 + Math.random() * 0.5);
+        }
+        
+        update() {
+            // Calculate distance from mouse
+            if (mouse.x !== null && mouse.y !== null) {
+                const dx = this.x - mouse.x;
+                const dy = this.y - mouse.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // If within mouse radius, move away
+                if (distance < config.mouseRadius) {
+                    const angle = Math.atan2(dy, dx);
+                    const force = (config.mouseRadius - distance) / config.mouseRadius;
+                    this.vx += Math.cos(angle) * force * config.repelStrength;
+                    this.vy += Math.sin(angle) * force * config.repelStrength;
+                }
+            }
+            
+            // Return to base position
+            const dxBase = this.baseX - this.x;
+            const dyBase = this.baseY - this.y;
+            this.vx += dxBase * config.returnSpeed;
+            this.vy += dyBase * config.returnSpeed;
+            
+            // Apply velocity with damping
+            this.x += this.vx;
+            this.y += this.vy;
+            this.vx *= 0.9;
+            this.vy *= 0.9;
+            
+            // Limit speed
+            const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+            if (speed > config.maxSpeed) {
+                this.vx = (this.vx / speed) * config.maxSpeed;
+                this.vy = (this.vy / speed) * config.maxSpeed;
+            }
+            
+            // Keep within bounds
+            if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                this.x = this.baseX;
+                this.y = this.baseY;
+                this.vx = 0;
+                this.vy = 0;
+            }
+        }
+        
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            
+            // Add a subtle glow
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = this.color;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
+    }
+    
+    // Initialize canvas size
+    function resizeCanvas() {
+        const rect = aboutSection.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        canvasRect = canvas.getBoundingClientRect();
+        
+        // Reinitialize dots if canvas was resized significantly
+        if (dots.length === 0 || Math.abs(canvas.width - dots[0].baseX) > canvas.width / 2) {
+            initDots();
+        } else {
+            // Update base positions proportionally
+            dots.forEach(dot => {
+                dot.baseX = (dot.baseX / canvas.width) * rect.width;
+                dot.baseY = (dot.baseY / canvas.height) * rect.height;
+            });
+        }
+    }
+    
+    // Initialize dots
+    function initDots() {
+        dots = [];
+        for (let i = 0; i < config.dotCount; i++) {
+            dots.push(new Dot());
+        }
+    }
+    
+    // Track mouse position relative to canvas
+    function updateMousePosition(e) {
+        if (!canvasRect) canvasRect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - canvasRect.left;
+        mouse.y = e.clientY - canvasRect.top + window.scrollY;
+    }
+    
+    // Animation loop
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        dots.forEach(dot => {
+            dot.update();
+            dot.draw();
+        });
+        
+        requestAnimationFrame(animate);
+    }
+    
+    // Event listeners
+    window.addEventListener('resize', resizeCanvas);
+    aboutSection.addEventListener('mousemove', updateMousePosition);
+    aboutSection.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
+    
+    // Initialize
+    resizeCanvas();
+    initDots();
+    animate();
+    
+    // Reinitialize when scrolling into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && dots.length === 0) {
+                initDots();
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    observer.observe(aboutSection);
+})();
+
