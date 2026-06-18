@@ -1,4 +1,5 @@
 {
-  "buildCommand": "NITRO_PRESET=vercel-edge npm run build",
+  "buildCommand": "NITRO_PRESET=static npm run build",
+  "outputDirectory": ".output/public",
   "framework": null
 }
