@@ -179,6 +179,12 @@ class AnimationController {
     }
   }
 
+  public pause() {
+    this.timeline.pause();
+  }
+  public resume() {
+    this.timeline.resume();
+  }
   public destroy() {
     this.timeline.kill();
   }
@@ -316,7 +322,19 @@ export function SpiralAnimation() {
     animationRef.current?.destroy();
     animationRef.current = new AnimationController(canvas, ctx, dpr, size);
 
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (animationRef.current) {
+          if (entry.isIntersecting) animationRef.current.resume();
+          else animationRef.current.pause();
+        }
+      },
+      { threshold: 0 },
+    );
+    visibilityObserver.observe(canvas);
+
     return () => {
+      visibilityObserver.disconnect();
       animationRef.current?.destroy();
       animationRef.current = null;
     };

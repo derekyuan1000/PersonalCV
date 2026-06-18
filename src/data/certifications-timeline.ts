@@ -329,3 +329,58 @@ export const certTimelineData: TimelineItem[] = [
     image: img("Learn C++ Object Oriented Programming the easy way.jpg"),
   },
 ];
+
+export const featuredCertTimelineData: TimelineItem[] = [
+  {
+    id: 22,
+    title: "Red Hat Admin",
+    date: "2023",
+    content:
+      "Red Hat Certified System Administrator — Linux system administration and enterprise infrastructure management.",
+    category: "DevOps",
+    icon: Terminal,
+    relatedIds: [20, 15, 12],
+    status: "completed",
+    energy: 95,
+    image: img("Red Hat Certified System Administrator.jpg"),
+  },
+  {
+    id: 20,
+    title: "Android Developer",
+    date: "2023",
+    content:
+      "Associate Android Developer Certification in Kotlin — professional Android app development with Kotlin.",
+    category: "Mobile",
+    icon: Smartphone,
+    relatedIds: [22, 15, 12],
+    status: "completed",
+    energy: 92,
+    image: img("Associate Android Developer certification in Kotlin.jpg"),
+  },
+  {
+    id: 15,
+    title: "CS50 AI",
+    date: "2023",
+    content:
+      "CS50's Introduction to Artificial Intelligence with Python — Harvard's AI course covering search, ML, and neural nets.",
+    category: "Data Science",
+    icon: Brain,
+    relatedIds: [22, 20, 12],
+    status: "completed",
+    energy: 100,
+    image: img("CS50's Introduction to Artificial Intelligence with Python.jpg"),
+  },
+  {
+    id: 12,
+    title: "edX Front-End",
+    date: "2023",
+    content:
+      "edX Front-End Web Developer Professional Certificate — HTML, CSS, JavaScript, and responsive design.",
+    category: "Web Dev",
+    icon: Monitor,
+    relatedIds: [22, 20, 15],
+    status: "completed",
+    energy: 92,
+    image: img("edX Front End Web Developer Professional Certificate Program HTML.jpg"),
+  },
+];

@@ -1,17 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SpiralAnimation } from "@/components/ui/spiral-animation";
 import { InteractiveRobotSpline } from "@/components/ui/interactive-3d-robot";
 
 const ROBOT_SCENE_URL = "https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode";
 
 export default function Blog() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setInView(true);
+      },
+      { rootMargin: "300px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="blog" className="relative min-h-screen overflow-hidden bg-black">
+    <section ref={sectionRef} id="blog" className="relative min-h-screen overflow-hidden bg-black">
       {/* Spiral animation — full background */}
-      {mounted && (
+      {inView && (
         <div className="absolute inset-0 z-0">
           <SpiralAnimation />
         </div>
@@ -21,7 +34,7 @@ export default function Blog() {
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
 
       {/* 3D Robot — right half */}
-      {mounted && (
+      {inView && (
         <div className="absolute inset-y-0 right-0 z-10 hidden w-[52%] md:block">
           <InteractiveRobotSpline scene={ROBOT_SCENE_URL} className="h-full w-full" />
         </div>

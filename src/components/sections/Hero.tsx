@@ -19,8 +19,8 @@ export default function Hero() {
       </motion.div>
 
       {/* Green orb glow */}
-      <div className="pointer-events-none absolute -left-40 top-1/4 z-0 h-[600px] w-[600px] rounded-full bg-primary/20 blur-[140px]" />
-      <div className="pointer-events-none absolute -right-32 bottom-0 z-0 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-40 top-1/4 z-0 h-[400px] w-[400px] rounded-full bg-primary/15 blur-[80px]" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 z-0 h-[350px] w-[350px] rounded-full bg-primary/10 blur-[60px]" />
 
       {/* Grid overlay */}
       <div
