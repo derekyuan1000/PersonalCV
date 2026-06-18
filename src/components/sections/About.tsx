@@ -143,7 +143,7 @@ export default function About() {
                     repositories span chess engines, neural networks, real-time messaging apps,
                     calculator mods, and web tooling.
                   </p>
-                  <
+                  <a
                     href="https://github.com/derekyuan1000"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -213,7 +213,7 @@ export default function About() {
                     find undervalued opportunities, particularly in the small-cap space where
                     institutional coverage is thin.
                   </p>
-                  <
+                  <a
                     href="https://trades.derekyuan.co.uk"
                     target="_blank"
                     rel="noopener noreferrer"
