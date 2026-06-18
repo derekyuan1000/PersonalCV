@@ -52,8 +52,9 @@ export default function Blog() {
           </h2>
 
           <p className="mb-10 text-base leading-relaxed text-[#bdbdbd] md:text-lg">
-            Every week I write about whatever's caught my eye — market deep-dives, software builds,
-            chess strategy, and the occasional rabbit hole.
+            Weekly posts about whatever is interesting to me at the time. Topics will range from
+            technological advances, finance or even chess! Whatever is interesting to me at that
+            time.
           </p>
 
           {/* Enter button */}

@@ -72,9 +72,9 @@ export default function Hero() {
             <span className="text-primary">Yuan</span>
           </h1>
           <p className="mt-6 max-w-xl text-base text-[#bdbdbd] md:text-lg">
-            Developer · Chess engineer · AI builder. I ship Python, Unity, full-stack web, and
-            real-time systems — from neural networks built from scratch to a Lichess bot that plays
-            sharp tactical chess.
+            Backend website developer, focusing on tech stacks including Spring and Node.js. I also
+            like working with different algorithms, specifically when it comes to topics like chess
+            and finance!
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a

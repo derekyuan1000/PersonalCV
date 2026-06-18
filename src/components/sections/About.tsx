@@ -13,7 +13,7 @@ import {
 const interests = [
   {
     id: "coding",
-    category: "Development",
+    category: "Backend Website Development",
     title: "Full Stack Developer",
     subtitle: "Public repositories",
     glowColor: "blue" as const,
@@ -138,10 +138,10 @@ export default function About() {
                 </DialogHeader>
                 <div className="space-y-4 text-sm text-foreground">
                   <p>
-                    I build across the full stack — Python automation scripts, C# Unity games,
-                    TypeScript web apps, Kotlin Android apps, and everything in between. My public
-                    repositories span chess engines, neural networks, real-time messaging apps,
-                    calculator mods, and web tooling.
+                    I build everything across the stack, however there is usually a heavier emphasis
+                    on the backend, so don't expect a great UI! I do branch out however, I work with
+                    different technologies, with a heavier emphasis on algorithmic usage of logical
+                    process such as finance and chess.
                   </p>
                   <a
                     href="https://github.com/derekyuan1000"
@@ -167,17 +167,8 @@ export default function About() {
                 </DialogHeader>
                 <div className="space-y-4 text-sm text-foreground">
                   <p>
-                    Typing started as a productivity habit and turned into genuine competition. I'm
-                    an open-source contributor to{" "}
-                    <a
-                      href="https://monkeytype.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline"
-                    >
-                      MonkeyType
-                    </a>{" "}
-                    — one of the most popular typing test platforms on the web.
+                    Typing has always been a passion of mine. Starting as just a minor efficiency
+                    improvement, it has now become a genuine hobby!
                   </p>
                   <div className="rounded-lg border border-border bg-muted/30 p-4">
                     <p className="mb-1 font-mono text-xs uppercase tracking-wider text-muted-foreground">
@@ -208,10 +199,10 @@ export default function About() {
                 </DialogHeader>
                 <div className="space-y-4 text-sm text-foreground">
                   <p>
-                    Outside of code I enjoy digging into company financials. My focus is fundamental
-                    analysis — reading balance sheets, income statements, and cash flow reports to
-                    find undervalued opportunities, particularly in the small-cap space where
-                    institutional coverage is thin.
+                    Outside of code I enjoy trading stocks and finance. Primarily I focus on
+                    fundamental analysis, however I do sometimes venture into trading with
+                    technicals. However it is usually a combination of both! All of my trades are
+                    available at the link below.
                   </p>
                   <a
                     href="https://trades.derekyuan.co.uk"
@@ -237,9 +228,9 @@ export default function About() {
                 </DialogHeader>
                 <div className="space-y-4 text-sm text-foreground">
                   <p>
-                    Chess is the game I keep coming back to. I hold the FIDE Candidate Master (ACM)
-                    title and maintain 2000+ ratings across both Blitz and Rapid time controls on
-                    Lichess.
+                    I have always enjoyed chess, it's a game which I feel really tests your thinking
+                    ability, and you really have to consider what could happen next. I hold an ACM
+                    title with ratings of over 2000 on Lichess.
                   </p>
                   <div className="grid grid-cols-3 gap-3">
                     {[

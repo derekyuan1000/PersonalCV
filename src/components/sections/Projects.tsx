@@ -5,27 +5,30 @@ import type { CardItem } from "@/components/ui/card-fan-carousel";
 
 const featuredProjects: CardItem[] = [
   {
-    imgUrl: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400&h=600&fit=crop",
+    imgUrl: "/images/projects/dragonbot.png",
     alt: "DragonBot V2 — Chess AI",
     linkUrl: "https://github.com/derekyuan1000/DragonBotV2",
   },
   {
-    imgUrl: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=400&h=600&fit=crop",
+    imgUrl: "/images/projects/quicknotzz.png",
     alt: "QuickNotzz — Notes App",
     linkUrl: "https://github.com/derekyuan1000/QuickNotzz",
   },
   {
-    imgUrl: "https://images.unsplash.com/photo-1580541832626-2a7131ee809f?w=400&h=600&fit=crop",
+    imgUrl:
+      "https://raw.githubusercontent.com/derekyuan1000/ChessToolkit/master/Screenshots/BATTLE_ARENA.png",
     alt: "Chess Toolkit — Utilities",
     linkUrl: "https://github.com/derekyuan1000/ChessToolkit",
+    objectPosition: "top left",
   },
   {
-    imgUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=600&fit=crop",
+    imgUrl: "/images/projects/neuralnetwork.png",
     alt: "Neural Network — Deep Learning",
     linkUrl: "https://github.com/derekyuan1000/NeuralNetwork",
   },
   {
-    imgUrl: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=600&fit=crop",
+    imgUrl:
+      "https://raw.githubusercontent.com/derekyuan1000/PixelMasterX/Master/Screenshots/img.png",
     alt: "PixelMasterX — Pixel Art",
     linkUrl: "https://github.com/derekyuan1000/PixelMasterX",
   },

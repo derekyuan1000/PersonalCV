@@ -5,6 +5,7 @@ export interface CardItem {
   imgUrl: string;
   alt?: string;
   linkUrl?: string;
+  objectPosition?: string;
 }
 
 interface SocialCardsProps {
@@ -342,6 +343,7 @@ export default function SocialCards({ cards }: SocialCardsProps) {
                     loading="lazy"
                     alt={card.alt || `Card ${index}`}
                     className="absolute inset-0 w-full h-full object-cover z-10"
+                    style={{ objectPosition: card.objectPosition ?? "top center" }}
                   />
                   {card.alt && (
                     <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/80 to-transparent px-3 py-3">
