@@ -16,6 +16,7 @@ export default function WaveVisualizer({ className }: WaveVisualizerProps) {
 
     let time = 0;
     let raf = 0;
+    let paused = false;
     const waveData = Array.from({ length: 10 }).map(() => ({
       value: Math.random() * 0.5 + 0.1,
       targetValue: Math.random() * 0.5 + 0.1,
@@ -53,7 +54,7 @@ export default function WaveVisualizer({ className }: WaveVisualizerProps) {
           const nx = (x / w) * 2 - 1;
           const px = nx + i * 0.04 + freq * 0.03;
           const py = Math.sin(px * 10 + time) * Math.cos(px * 2) * freq * 0.1 * ((i + 1) / 10);
-          const y = (py + 1) * h / 2;
+          const y = ((py + 1) * h) / 2;
           x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
         }
         const intensity = Math.min(1, freq * 0.3);
@@ -71,17 +72,33 @@ export default function WaveVisualizer({ className }: WaveVisualizerProps) {
     };
 
     const animate = () => {
-      time += 0.02;
-      updateWaveData();
-      draw();
+      if (!paused) {
+        time += 0.02;
+        updateWaveData();
+        draw();
+      }
       raf = requestAnimationFrame(animate);
     };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        paused = !entry.isIntersecting;
+      },
+      { threshold: 0 },
+    );
+    observer.observe(canvas);
+    const handleVisibility = () => {
+      paused = document.hidden;
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
 
     resize();
     animate();
     window.addEventListener("resize", resize);
     return () => {
       window.removeEventListener("resize", resize);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      observer.disconnect();
       cancelAnimationFrame(raf);
     };
   }, []);

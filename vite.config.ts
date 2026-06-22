@@ -18,4 +18,27 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "framer-motion": ["framer-motion"],
+          spline: ["@splinetool/runtime", "@splinetool/react-spline"],
+          gsap: ["gsap"],
+          recharts: ["recharts"],
+          "radix-ui": [
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-select",
+            "@radix-ui/react-popover",
+            "@radix-ui/react-scroll-area",
+            "@radix-ui/react-slot",
+          ],
+        },
+      },
+    },
+  },
 });

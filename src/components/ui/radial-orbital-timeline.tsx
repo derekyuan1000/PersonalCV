@@ -32,6 +32,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
   const containerRef = useRef<HTMLDivElement>(null);
   const orbitRef = useRef<HTMLDivElement>(null);
   const nodeRefs = useRef<Record<number, HTMLDivElement | null>>({});
+  const isVisibleRef = useRef(true);
 
   const handleContainerClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === containerRef.current || e.target === orbitRef.current) {
@@ -97,10 +98,30 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
   };
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0 },
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    const handleVisibility = () => {
+      isVisibleRef.current = !document.hidden;
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibility);
+    };
+  }, []);
+
+  useEffect(() => {
     let timer: ReturnType<typeof setInterval>;
     if (autoRotate) {
       timer = setInterval(() => {
-        setRotationAngle((prev) => Number(((prev + 0.3) % 360).toFixed(3)));
+        if (isVisibleRef.current) {
+          setRotationAngle((prev) => Number(((prev + 0.3) % 360).toFixed(3)));
+        }
       }, 50);
     }
     return () => {
