@@ -22,9 +22,9 @@ const featuredProjects: CardItem[] = [
     objectPosition: "top left",
   },
   {
-    imgUrl: "/images/projects/neuralnetwork.png",
-    alt: "Neural Network — Deep Learning",
-    linkUrl: "https://github.com/derekyuan1000/NeuralNetwork",
+    imgUrl: "/images/projects/electiontracker.png",
+    alt: "ElectionTracker — UK Vote Share Projection",
+    linkUrl: "https://electiontracker.derekyuan.co.uk/",
   },
   {
     imgUrl:

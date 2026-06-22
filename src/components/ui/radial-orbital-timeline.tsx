@@ -42,6 +42,32 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
     }
   };
 
+  const openItem = (id: number) => {
+    setExpandedItems((prev) => {
+      const newState: Record<number, boolean> = {};
+      Object.keys(prev).forEach((key) => {
+        newState[parseInt(key)] = false;
+      });
+      newState[id] = true;
+      return newState;
+    });
+    setActiveNodeId(id);
+    setAutoRotate(false);
+    const relatedItems = getRelatedItems(id);
+    const newPulseEffect: Record<number, boolean> = {};
+    relatedItems.forEach((relId) => {
+      newPulseEffect[relId] = true;
+    });
+    setPulseEffect(newPulseEffect);
+  };
+
+  const closeItem = (id: number) => {
+    setExpandedItems((prev) => ({ ...prev, [id]: false }));
+    setActiveNodeId(null);
+    setAutoRotate(true);
+    setPulseEffect({});
+  };
+
   const toggleItem = (id: number) => {
     setExpandedItems((prev) => {
       const newState = { ...prev };
@@ -170,10 +196,8 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                   zIndex: isExpanded ? 200 : position.zIndex,
                   opacity: isExpanded ? 1 : position.opacity,
                 }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleItem(item.id);
-                }}
+                onMouseEnter={() => openItem(item.id)}
+                onMouseLeave={() => closeItem(item.id)}
               >
                 {/* Glow ring */}
                 <div

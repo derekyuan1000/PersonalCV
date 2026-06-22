@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { certTimelineData, featuredCertTimelineData } from "@/data/certifications-timeline";
-import { MousePointerClick, ChevronRight, X } from "lucide-react";
+import { MousePointer, ChevronRight, X } from "lucide-react";
 
 export default function Certifications() {
   const [mounted, setMounted] = useState(false);
@@ -22,8 +22,8 @@ export default function Certifications() {
           Certifications
         </h2>
         <p className="mt-3 text-sm text-white/50 flex items-center gap-2 justify-center">
-          <MousePointerClick className="text-primary animate-bounce" size={16} />
-          Click any node to view the certificate
+          <MousePointer className="text-primary animate-bounce" size={16} />
+          Hover any node to view the certificate
         </p>
       </div>
 

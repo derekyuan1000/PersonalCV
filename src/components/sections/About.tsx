@@ -25,7 +25,7 @@ const interests = [
     id: "typing",
     category: "Speed Typing",
     title: "Competitive Typist",
-    subtitle: "161 WPM — 15 sec PB",
+    subtitle: "167 WPM — 15 sec PB",
     glowColor: "purple" as const,
     link: "https://monkeytype.com/profile/dyuan",
     linkLabel: "monkeytype.com/profile/dyuan",
