@@ -1,0 +1,22 @@
+# Derek Yuan — Developer Portfolio
+
+> Personal portfolio and CV of Derek Yuan: developer, chess engineer, and AI builder.
+
+Derek Yuan is a software developer with expertise in Python, TypeScript, React, Android (Kotlin), Unity (C#), and AI/ML. This site showcases his projects, certifications, and professional background.
+
+## Projects
+
+- [Election Tracker](https://electiontracker.derekyuan.co.uk/): UK election projection and results tracker built with real-time data.
+- Chess Toolkit: Chess analysis and tooling utilities.
+- DragonBot: Discord bot project.
+- QuickNotzz: Note-taking application.
+- PixelMaster: Pixel art creation tool.
+
+## Certifications
+
+Derek holds 20+ certifications spanning Python, JavaScript, C#, Unity game development, data science, machine learning, ethical hacking, DevOps, Django, Android development, and Microsoft Office Specialist (Excel Expert, Word Expert, PowerPoint Associate, MOS Associate).
+
+## Contact
+
+- Email: derekyuan1000@gmail.com
+- Twitter/X: @derekyuan1000
