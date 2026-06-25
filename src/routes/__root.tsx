@@ -8,27 +8,112 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
+import { motion } from "framer-motion";
+import { ArrowLeft, Home } from "lucide-react";
 
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
+    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#101010]">
+      {/* Green orb glows */}
+      <div className="pointer-events-none absolute -left-40 top-1/4 h-[400px] w-[400px] rounded-full bg-[#00d992]/10 blur-[80px]" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-[350px] w-[350px] rounded-full bg-[#00d992]/8 blur-[60px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-[#00d992]/5 blur-[100px]" />
+
+      {/* Grid overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="relative z-10 px-6 text-center"
+      >
+        {/* Label */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          className="mb-6 font-mono text-xs font-semibold uppercase tracking-[0.3em] text-[#00d992]"
+        >
+          <span className="mr-3 inline-block h-2 w-2 rounded-full bg-[#00d992] shadow-[0_0_12px_#00d992]" />
+          Error / 404
+        </motion.p>
+
+        {/* Large 404 */}
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
+          className="text-[10rem] font-medium leading-none tracking-tight text-[#f2f2f2] md:text-[14rem] lg:text-[18rem]"
+          style={{ textShadow: "0 0 80px rgba(0,217,146,0.15)" }}
+        >
+          4<span className="text-[#00d992]">0</span>4
+        </motion.h1>
+
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
+          className="mx-auto mt-2 h-px w-48 bg-gradient-to-r from-transparent via-[#00d992]/50 to-transparent"
+        />
+
+        {/* Message */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="mt-8"
+        >
+          <h2 className="text-xl font-semibold text-[#f2f2f2] md:text-2xl">Page not found</h2>
+          <p className="mt-3 mx-auto max-w-sm text-sm text-[#8b949e] md:text-base">
+            This page doesn't exist or may have been moved. Head back home to explore the portfolio.
+          </p>
+        </motion.div>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+        >
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#00d992] px-6 py-3 text-sm font-semibold text-[#101010] transition hover:bg-[#2fd6a1]"
           >
+            <Home className="h-4 w-4" />
             Go home
           </Link>
-        </div>
-      </div>
+          <button
+            onClick={() => window.history.back()}
+            className="inline-flex items-center gap-2 rounded-full border border-[#3d3a39] px-6 py-3 text-sm font-semibold text-[#f2f2f2] transition hover:border-[#00d992] hover:text-[#00d992]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Go back
+          </button>
+        </motion.div>
+
+        {/* Footer label */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="mt-12 font-mono text-xs uppercase tracking-[0.3em] text-[#3d3a39]"
+        >
+          Derek Yuan — Portfolio
+        </motion.p>
+      </motion.div>
     </div>
   );
 }
