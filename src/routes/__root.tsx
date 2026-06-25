@@ -1,7 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
-  Link,
   createRootRouteWithContext,
   useRouter,
   HeadContent,
@@ -88,13 +87,13 @@ function NotFoundComponent() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <Link
-            to="/"
+          <a
+            href="/"
             className="group inline-flex items-center gap-2 rounded-full bg-[#00d992] px-6 py-3 text-sm font-semibold text-[#101010] transition hover:bg-[#2fd6a1]"
           >
             <Home className="h-4 w-4" />
             Go home
-          </Link>
+          </a>
           <button
             onClick={() => window.history.back()}
             className="inline-flex items-center gap-2 rounded-full border border-[#3d3a39] px-6 py-3 text-sm font-semibold text-[#f2f2f2] transition hover:border-[#00d992] hover:text-[#00d992]"
