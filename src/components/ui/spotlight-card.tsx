@@ -78,7 +78,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
       backgroundColor: "var(--backdrop, transparent)",
       border: "var(--border-size) solid var(--backup-border)",
       position: "relative",
-      touchAction: "none",
+      touchAction: "pan-y",
     };
     if (width !== undefined) {
       baseStyles.width = typeof width === "number" ? `${width}px` : width;
