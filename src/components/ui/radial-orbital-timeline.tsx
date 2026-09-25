@@ -33,6 +33,23 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
   const orbitRef = useRef<HTMLDivElement>(null);
   const nodeRefs = useRef<Record<number, HTMLDivElement | null>>({});
   const isVisibleRef = useRef(true);
+  const [viewportWidth, setViewportWidth] = useState<number>(1024);
+  const [canHover, setCanHover] = useState<boolean>(true);
+
+  useEffect(() => {
+    const updateWidth = () => setViewportWidth(window.innerWidth);
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setCanHover(mql.matches);
+    const onChange = () => setCanHover(mql.matches);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
 
   const handleContainerClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === containerRef.current || e.target === orbitRef.current) {
@@ -137,7 +154,15 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
     setRotationAngle(270 - targetAngle);
   };
 
-  const radius = timelineData.length > 15 ? 260 : 200;
+  const baseRadius = timelineData.length > 15 ? 260 : 200;
+  const radius =
+    viewportWidth < 420
+      ? baseRadius * 0.5
+      : viewportWidth < 640
+        ? baseRadius * 0.62
+        : viewportWidth < 900
+          ? baseRadius * 0.8
+          : baseRadius;
 
   const calculateNodePosition = (index: number, total: number) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
@@ -217,8 +242,16 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                   zIndex: isExpanded ? 200 : position.zIndex,
                   opacity: isExpanded ? 1 : position.opacity,
                 }}
-                onMouseEnter={() => openItem(item.id)}
-                onMouseLeave={() => closeItem(item.id)}
+                onMouseEnter={canHover ? () => openItem(item.id) : undefined}
+                onMouseLeave={canHover ? () => closeItem(item.id) : undefined}
+                onClick={
+                  canHover
+                    ? undefined
+                    : (e) => {
+                        e.stopPropagation();
+                        toggleItem(item.id);
+                      }
+                }
               >
                 {/* Glow ring */}
                 <div
@@ -263,7 +296,7 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
 
                 {/* Expanded card */}
                 {isExpanded && (
-                  <Card className="absolute top-20 left-1/2 -translate-x-1/2 w-80 bg-black/95 backdrop-blur-lg border-white/30 shadow-xl shadow-white/10 overflow-visible">
+                  <Card className="absolute top-20 left-1/2 -translate-x-1/2 w-[85vw] max-w-80 bg-black/95 backdrop-blur-lg border-white/30 shadow-xl shadow-white/10 overflow-visible">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-white/50" />
 
                     {/* Certificate image */}

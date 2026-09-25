@@ -23,7 +23,7 @@ export default function Certifications() {
         </h2>
         <p className="mt-3 text-sm text-white/50 flex items-center gap-2 justify-center">
           <MousePointer className="text-primary animate-bounce" size={16} />
-          Hover any node to view the certificate
+          Tap or hover a node to view the certificate
         </p>
       </div>
 

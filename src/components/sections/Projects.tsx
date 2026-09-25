@@ -16,10 +16,9 @@ const featuredProjects: CardItem[] = [
   },
   {
     imgUrl:
-      "https://raw.githubusercontent.com/derekyuan1000/ChessToolkit/master/Screenshots/BATTLE_ARENA.png",
-    alt: "Chess Toolkit — Utilities",
-    linkUrl: "https://github.com/derekyuan1000/ChessToolkit",
-    objectPosition: "top left",
+      "https://raw.githubusercontent.com/derekyuan1000/StockTracker/master/screenshots/dashboard.png",
+    alt: "StockTracker — Portfolio Tracker",
+    linkUrl: "https://github.com/derekyuan1000/StockTracker",
   },
   {
     imgUrl: "/images/projects/electiontracker.png",
@@ -28,9 +27,9 @@ const featuredProjects: CardItem[] = [
   },
   {
     imgUrl:
-      "https://raw.githubusercontent.com/derekyuan1000/PixelMasterX/Master/Screenshots/img.png",
-    alt: "PixelMasterX — Pixel Art",
-    linkUrl: "https://github.com/derekyuan1000/PixelMasterX",
+      "https://raw.githubusercontent.com/derekyuan1000/StockTracker-Mobile/master/assets/icon.png",
+    alt: "StockTracker Mobile — Portfolio Tracker Companion App",
+    linkUrl: "https://github.com/derekyuan1000/StockTracker-Mobile",
   },
 ];
 

@@ -37,8 +37,8 @@ const interests = [
     title: "Fundamental Analyst",
     subtitle: "Small-cap equities",
     glowColor: "green" as const,
-    link: "https://trades.derekyuan.co.uk",
-    linkLabel: "trades.derekyuan.co.uk",
+    link: "https://stocktracker.derekyuan.co.uk",
+    linkLabel: "stocktracker.derekyuan.co.uk",
     icon: <TrendingUp size={20} />,
   },
   {
@@ -205,12 +205,12 @@ export default function About() {
                     available at the link below.
                   </p>
                   <a
-                    href="https://trades.derekyuan.co.uk"
+                    href="https://stocktracker.derekyuan.co.uk"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
                   >
-                    trades.derekyuan.co.uk <ExternalLink size={13} />
+                    stocktracker.derekyuan.co.uk <ExternalLink size={13} />
                   </a>
                 </div>
               </>
