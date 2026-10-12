@@ -11,14 +11,6 @@ class Vector2D {
   }
 }
 
-class Vector3D {
-  constructor(
-    public x: number,
-    public y: number,
-    public z: number,
-  ) {}
-}
-
 class AnimationController {
   private timeline: gsap.core.Timeline;
   private time = 0;
@@ -117,25 +109,26 @@ class AnimationController {
     );
   }
 
-  public showProjectedDot(position: Vector3D, sizeFactor: number) {
-    const t2 = this.constrain(this.map(this.time, this.changeEventTime, 1, 0, 1), 0, 1);
-    const newCameraZ = this.cameraZ + this.ease(Math.pow(t2, 1.2), 1.8) * this.cameraTravelDistance;
-    if (position.z > newCameraZ) {
-      const depth = position.z - newCameraZ;
-      const x = (this.viewZoom * position.x) / depth;
-      const y = (this.viewZoom * position.y) / depth;
-      const sw = (400 * sizeFactor) / depth;
-      this.ctx.lineWidth = sw;
-      this.ctx.beginPath();
-      this.ctx.arc(x, y, 0.5, 0, Math.PI * 2);
-      this.ctx.fill();
+  // Camera position for the current frame; computed once in render() rather than per star.
+  private frameCameraZ = 0;
+
+  public showProjectedDot(px: number, py: number, pz: number) {
+    if (pz > this.frameCameraZ) {
+      const depth = pz - this.frameCameraZ;
+      const x = (this.viewZoom * px) / depth;
+      const y = (this.viewZoom * py) / depth;
+      // Dots are a fixed 1px; they are queued into the current path and
+      // filled once per frame by render() instead of one fill per star.
+      this.ctx.rect(x - 0.5, y - 0.5, 1, 1);
     }
   }
 
   private drawStartDot() {
     if (this.time > this.changeEventTime) {
       const dy = (this.cameraZ * this.startDotYOffset) / this.viewZoom;
-      this.showProjectedDot(new Vector3D(0, dy, this.cameraTravelDistance), 2.5);
+      this.ctx.beginPath();
+      this.showProjectedDot(0, dy, this.cameraTravelDistance);
+      this.ctx.fill();
     }
   }
 
@@ -148,12 +141,16 @@ class AnimationController {
 
     const t1 = this.constrain(this.map(this.time, 0, this.changeEventTime + 0.25, 0, 1), 0, 1);
     const t2 = this.constrain(this.map(this.time, this.changeEventTime, 1, 0, 1), 0, 1);
+    this.frameCameraZ =
+      this.cameraZ + this.ease(Math.pow(t2, 1.2), 1.8) * this.cameraTravelDistance;
 
     ctx.rotate(-Math.PI * this.ease(t2, 2.7));
     this.drawTrail(t1);
 
     ctx.fillStyle = "white";
+    ctx.beginPath();
     for (const star of this.stars) star.render(t1, this);
+    ctx.fill();
 
     this.drawStartDot();
     ctx.restore();
@@ -201,6 +198,7 @@ class Star {
   private rotationDirection: number;
   private expansionRate: number;
   private finalScale: number;
+  private spiralPos!: Vector2D;
 
   constructor(cameraZ: number, cameraTravelDistance: number) {
     this.angle = Math.random() * Math.PI * 2;
@@ -219,7 +217,9 @@ class Star {
   }
 
   render(p: number, controller: AnimationController) {
-    const spiralPos = controller.spiralPath(this.spiralLocation);
+    // spiralLocation never changes, so the base position is computed once.
+    this.spiralPos ??= controller.spiralPath(this.spiralLocation);
+    const spiralPos = this.spiralPos;
     const q = p - this.spiralLocation;
     if (q <= 0) return;
 
@@ -276,18 +276,7 @@ class Star {
     const vx = ((this.z - controller.cameraZ) * screenX) / controller.viewZoom;
     const vy = ((this.z - controller.cameraZ) * screenY) / controller.viewZoom;
 
-    let sizeMultiplier: number;
-    if (displacementProgress < 0.6) {
-      sizeMultiplier = 1.0 + displacementProgress * 0.2;
-    } else {
-      const t = (displacementProgress - 0.6) / 0.4;
-      sizeMultiplier = 1.2 * (1.0 - t) + this.finalScale * t;
-    }
-
-    controller.showProjectedDot(
-      new Vector3D(vx, vy, this.z),
-      8.5 * this.strokeWeightFactor * sizeMultiplier,
-    );
+    controller.showProjectedDot(vx, vy, this.z);
   }
 }
 
@@ -311,7 +300,8 @@ export function SpiralAnimation() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const dpr = window.devicePixelRatio || 1;
+    // The stars are 1px dots, so extra resolution on HiDPI screens only costs fill rate.
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     const size = Math.max(dimensions.width, dimensions.height);
     canvas.width = size * dpr;
     canvas.height = size * dpr;

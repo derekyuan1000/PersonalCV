@@ -9,7 +9,7 @@ Derek Yuan is a software developer with expertise in Python, TypeScript, React, 
 - [Election Tracker](https://electiontracker.derekyuan.co.uk/): UK election projection and results tracker built with real-time data.
 - Chess Toolkit: Chess analysis and tooling utilities.
 - DragonBot: Discord bot project.
-- QuickNotzz: Note-taking application.
+- [Monolith](https://github.com/derekyuan1000/Monolith-FXCG50): KhiCAS computer algebra add-in for the Casio fx-CG50, reskinned to match the native RUN-MAT screen.
 - PixelMaster: Pixel art creation tool.
 
 ## Certifications

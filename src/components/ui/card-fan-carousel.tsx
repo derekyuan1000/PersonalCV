@@ -1,11 +1,13 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, type ReactNode } from "react";
 import gsap from "gsap";
 
 export interface CardItem {
-  imgUrl: string;
+  imgUrl?: string;
   alt?: string;
   linkUrl?: string;
   objectPosition?: string;
+  /** Rendered in place of the image when provided. */
+  content?: ReactNode;
 }
 
 interface SocialCardsProps {
@@ -336,7 +338,9 @@ export default function SocialCards({ cards }: SocialCardsProps) {
             className="fan-layout flex relative justify-center items-center w-full max-w-[80rem]"
           >
             {cards.map((card, index) => {
-              const image = (
+              const image = card.content ? (
+                <div className="relative w-full h-full overflow-hidden">{card.content}</div>
+              ) : (
                 <div className="relative w-full h-full overflow-hidden">
                   <img
                     src={card.imgUrl}
@@ -358,6 +362,7 @@ export default function SocialCards({ cards }: SocialCardsProps) {
                 <a
                   key={index}
                   href={card.linkUrl}
+                  aria-label={card.alt}
                   target={card.linkUrl.startsWith("http") ? "_blank" : "_self"}
                   rel="noopener noreferrer"
                   className="fan-card block cursor-pointer"

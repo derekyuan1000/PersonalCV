@@ -2,32 +2,37 @@ import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import SocialCards from "@/components/ui/card-fan-carousel";
 import type { CardItem } from "@/components/ui/card-fan-carousel";
+import {
+  DragonBotCover,
+  ElectionTrackerCover,
+  MonolithCover,
+  StockTrackerCover,
+  StockTrackerMobileCover,
+} from "./project-covers";
 
 const featuredProjects: CardItem[] = [
   {
-    imgUrl: "/images/projects/dragonbot.png",
+    content: <DragonBotCover />,
     alt: "DragonBot V2 — Chess AI",
     linkUrl: "https://github.com/derekyuan1000/DragonBotV2",
   },
   {
-    imgUrl: "/images/projects/quicknotzz.png",
-    alt: "QuickNotzz — Notes App",
-    linkUrl: "https://github.com/derekyuan1000/QuickNotzz",
+    content: <MonolithCover />,
+    alt: "Monolith — CAS add-in for the Casio fx-CG50",
+    linkUrl: "https://github.com/derekyuan1000/Monolith-FXCG50",
   },
   {
-    imgUrl:
-      "https://raw.githubusercontent.com/derekyuan1000/StockTracker/master/screenshots/dashboard.png",
+    content: <StockTrackerCover />,
     alt: "StockTracker — Portfolio Tracker",
     linkUrl: "https://github.com/derekyuan1000/StockTracker",
   },
   {
-    imgUrl: "/images/projects/electiontracker.png",
+    content: <ElectionTrackerCover />,
     alt: "ElectionTracker — UK Vote Share Projection",
     linkUrl: "https://electiontracker.derekyuan.co.uk/",
   },
   {
-    imgUrl:
-      "https://raw.githubusercontent.com/derekyuan1000/StockTracker-Mobile/master/assets/icon.png",
+    content: <StockTrackerMobileCover />,
     alt: "StockTracker Mobile — Portfolio Tracker Companion App",
     linkUrl: "https://github.com/derekyuan1000/StockTracker-Mobile",
   },

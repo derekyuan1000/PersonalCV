@@ -27,7 +27,8 @@ export default function WaveVisualizer({ className }: WaveVisualizerProps) {
       const parent = canvas.parentElement;
       const w = parent?.clientWidth ?? window.innerWidth;
       const h = parent?.clientHeight ?? window.innerHeight;
-      const dpr = window.devicePixelRatio || 1;
+      // Soft, blurred background lines: HiDPI resolution is not visible, only costly.
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       canvas.style.width = `${w}px`;
